@@ -40,6 +40,7 @@ namespace DB_Project
 
         private void label1_Click(object sender, EventArgs e)
         {
+            this.ClientSize = new System.Drawing.Size(900, 900);
 
         }
     }
