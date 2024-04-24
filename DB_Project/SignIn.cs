@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace DB_Project
 {
     public partial class SignIn : Form
     {
+        bool wrongFormat;
         OracleConnection connect;
         public SignIn()
         {
@@ -29,18 +31,41 @@ namespace DB_Project
         private void button1_Click(object sender, EventArgs e)
         {
             string searchAtt = "", msg = "";
+            bool notNum = true;
             if (this.radioButton1.Checked) searchAtt = "CNIC";
             if (this.radioButton2.Checked) searchAtt = "EMAIL";
             if (this.radioButton3.Checked) searchAtt = "USERID";
             if (this.radioButton1.Checked) msg = "CNIC";
             if (this.radioButton2.Checked) msg = "E-Mail";
             if (this.radioButton3.Checked) msg = "User ID";
+            if (msg == "CNIC" && this.label4.Text == "           Invalid CNIC Format\nPlease use the CNIC Format 12345-1234567-8")
+            {
+                MessageBox.Show("Entered CNIC is in an invalid format\nPlease use the CNIC Format 12345-1234567-8 and try again", "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (this.textBox1.Text == "")
+            {
+                MessageBox.Show("No " + msg + " entered\nPlease enter a " + msg + " and try again.", "Missing Data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (this.textBox2.Text == "")
+            {
+                MessageBox.Show("No password entered\nPlease enter password and try again.", "Missing Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            for(int i = 0; i < this.textBox1.Text.Length; i++) if (this.textBox1.Text[i] < '0' || this.textBox1.Text[i] > '9') notNum = true;
+            if (searchAtt == "USERID" && notNum)
+            {
+                MessageBox.Show("User ID cannot contain characters other than numbers\nPlease remove all non numeric characters and try again", "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             connect.Open();
             OracleCommand search = connect.CreateCommand();
             search.CommandText = "SELECT * FROM PASSENGER WHERE " + searchAtt + "=:criteria";
-            search.Parameters.Add(":criteria", OracleDbType.Varchar2).Value = textBox1.Text;
+            if(searchAtt=="USERID") search.Parameters.Add(":criteria", OracleDbType.Int64).Value = textBox1.Text;
+            else search.Parameters.Add(":criteria", OracleDbType.Varchar2).Value = textBox1.Text;
             OracleDataReader reader = search.ExecuteReader();
-           if (reader.Read())
+            if (reader.Read())
             {
                 if (textBox2.Text == reader.GetString(reader.GetOrdinal("PASSWORD")))
                 {
@@ -171,6 +196,11 @@ namespace DB_Project
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            //open signup form here
         }
     }
 }
