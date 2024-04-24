@@ -14,17 +14,19 @@ namespace DB_Project
 {
     public partial class SignIn : Form
     {
+        SignUp signup_form;
         bool wrongFormat;
         OracleConnection connect;
         public SignIn()
         {
+            string conStr = @"DATA SOURCE=localhost:1521/xe;USER ID=AIRLINE;PASSWORD=db_on_air";
+            connect = new OracleConnection(conStr);
+            signup_form = new SignUp(this, connect);
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string conStr = @"DATA SOURCE=localhost:1521/xe;USER ID=AIRLINE;PASSWORD=db_on_air";
-            connect = new OracleConnection(conStr);
             this.radioButton1.Checked = true;
         }
 
@@ -111,17 +113,9 @@ namespace DB_Project
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string str = this.textBox1.Text;
-            if(str=="") this.label4.Text = "Please use the CNIC Format 12345-1234567-8";
-            int limit = 150;
-            if (this.radioButton1.Checked) limit = 15;
-            if (this.radioButton2.Checked) limit = 25;
-            if (str.Length > limit)
+            if (str == "")
             {
-                int cursorPos = textBox1.SelectionStart;
-                string str2 = "";
-                for (int i = 0; i < str.Length - 1;i++) str2 += str[i];
-                this.textBox1.Text = str2;
-                textBox1.SelectionStart = Math.Min(cursorPos, textBox1.Text.Length);
+                this.label4.Text = "Please use the CNIC Format 12345-1234567-8";
                 return;
             }
             if (str.Length != 15) this.label4.Text = "           Invalid CNIC Format\nPlease use the CNIC Format 12345-1234567-8";
@@ -149,6 +143,7 @@ namespace DB_Project
                 this.radioButton1.ForeColor = System.Drawing.ColorTranslator.FromHtml("#4761F3");
                 this.label1.Text = "Enter CNIC";
                 this.label4.Show();
+                this.textBox1.MaxLength = 16;
             }
             else
             {
@@ -167,6 +162,7 @@ namespace DB_Project
                 this.radioButton3.ForeColor = System.Drawing.ColorTranslator.FromHtml("#4761F3");
                 this.label1.Text = "Enter User ID";
                 this.label4.Hide();
+                this.textBox1.MaxLength = 6;
             }
             else
             {
@@ -185,6 +181,7 @@ namespace DB_Project
                 this.radioButton2.ForeColor = System.Drawing.ColorTranslator.FromHtml("#4761F3");
                 this.label1.Text = "Enter E-Mail Address";
                 this.label4.Hide();
+                this.textBox1.MaxLength = 29;
             }
             else
             {
@@ -200,7 +197,13 @@ namespace DB_Project
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            //open signup form here
+            this.Hide();
+            signup_form.Show();
+        }
+
+        private void SignIn_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -54,6 +54,7 @@ namespace DB_Project
             this.textBox1.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(252)))));
             this.textBox1.Location = new System.Drawing.Point(95, 231);
+            this.textBox1.MaxLength = 16;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(310, 23);
             this.textBox1.TabIndex = 0;
@@ -97,6 +98,7 @@ namespace DB_Project
             this.textBox2.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(252)))));
             this.textBox2.Location = new System.Drawing.Point(95, 341);
+            this.textBox2.MaxLength = 29;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(310, 23);
             this.textBox2.TabIndex = 3;
@@ -278,6 +280,7 @@ namespace DB_Project
             this.DoubleBuffered = true;
             this.Name = "SignIn";
             this.Text = "Sign-In";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SignIn_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

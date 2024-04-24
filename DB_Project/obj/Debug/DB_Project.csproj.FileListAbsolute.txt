@@ -30,3 +30,4 @@ C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\bin\Debug\System.Threading
 C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\bin\Debug\System.ValueTuple.xml
 C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\obj\Debug\DB_Project.csproj.Up2Date
 C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\obj\Debug\DB_Project.SignIn.resources
+C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\obj\Debug\DB_Project.SignUp.resources
