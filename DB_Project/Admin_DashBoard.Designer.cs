@@ -29,159 +29,162 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_DashBoard));
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.CheckProfile = new System.Windows.Forms.RadioButton();
+            this.addEmp = new System.Windows.Forms.RadioButton();
+            this.manageEmp = new System.Windows.Forms.RadioButton();
+            this.manageFlight = new System.Windows.Forms.RadioButton();
+            this.revenue = new System.Windows.Forms.RadioButton();
+            this.viewFlight = new System.Windows.Forms.RadioButton();
+            this.assignTask = new System.Windows.Forms.RadioButton();
+            this.feedback = new System.Windows.Forms.RadioButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // radioButton1
+            // CheckProfile
             // 
-            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton1.Location = new System.Drawing.Point(12, 12);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(97, 51);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "\n   radioButton1   \n ";
-            this.radioButton1.UseVisualStyleBackColor = false;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.CheckProfile.Appearance = System.Windows.Forms.Appearance.Button;
+            this.CheckProfile.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.CheckProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CheckProfile.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CheckProfile.Location = new System.Drawing.Point(12, 10);
+            this.CheckProfile.Name = "CheckProfile";
+            this.CheckProfile.Size = new System.Drawing.Size(145, 51);
+            this.CheckProfile.TabIndex = 0;
+            this.CheckProfile.Text = "\n Check Profile\n ";
+            this.CheckProfile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CheckProfile.UseVisualStyleBackColor = false;
+            this.CheckProfile.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton2
+            // addEmp
             // 
-            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton2.Location = new System.Drawing.Point(12, 69);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(97, 51);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "\n   radioButton1   \n ";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.addEmp.Appearance = System.Windows.Forms.Appearance.Button;
+            this.addEmp.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.addEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addEmp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.addEmp.Location = new System.Drawing.Point(12, 60);
+            this.addEmp.Name = "addEmp";
+            this.addEmp.Size = new System.Drawing.Size(145, 51);
+            this.addEmp.TabIndex = 1;
+            this.addEmp.Text = "\nAdd Employee\n ";
+            this.addEmp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.addEmp.UseVisualStyleBackColor = false;
+            this.addEmp.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // radioButton3
+            // manageEmp
             // 
-            this.radioButton3.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton3.Location = new System.Drawing.Point(12, 126);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(97, 51);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "\n   radioButton1   \n ";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.manageEmp.Appearance = System.Windows.Forms.Appearance.Button;
+            this.manageEmp.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.manageEmp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.manageEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.manageEmp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.manageEmp.Location = new System.Drawing.Point(12, 110);
+            this.manageEmp.Name = "manageEmp";
+            this.manageEmp.Size = new System.Drawing.Size(145, 51);
+            this.manageEmp.TabIndex = 2;
+            this.manageEmp.Text = "\n   Manage Employee\n ";
+            this.manageEmp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.manageEmp.UseVisualStyleBackColor = false;
+            this.manageEmp.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
-            // radioButton4
+            // manageFlight
             // 
-            this.radioButton4.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton4.Location = new System.Drawing.Point(12, 183);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(97, 51);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "\n   radioButton1   \n ";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            this.manageFlight.Appearance = System.Windows.Forms.Appearance.Button;
+            this.manageFlight.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.manageFlight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.manageFlight.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.manageFlight.Location = new System.Drawing.Point(12, 160);
+            this.manageFlight.Name = "manageFlight";
+            this.manageFlight.Size = new System.Drawing.Size(145, 51);
+            this.manageFlight.TabIndex = 3;
+            this.manageFlight.Text = "\n   Manage Flight Schedule \n ";
+            this.manageFlight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.manageFlight.UseVisualStyleBackColor = false;
+            this.manageFlight.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
-            // radioButton5
+            // revenue
             // 
-            this.radioButton5.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton5.Location = new System.Drawing.Point(12, 240);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(97, 51);
-            this.radioButton5.TabIndex = 4;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "\n   radioButton1   \n ";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            this.revenue.Appearance = System.Windows.Forms.Appearance.Button;
+            this.revenue.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.revenue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.revenue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.revenue.Location = new System.Drawing.Point(12, 210);
+            this.revenue.Name = "revenue";
+            this.revenue.Size = new System.Drawing.Size(145, 51);
+            this.revenue.TabIndex = 4;
+            this.revenue.Text = "\n   Revenue  \n ";
+            this.revenue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.revenue.UseVisualStyleBackColor = false;
+            this.revenue.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
             // 
-            // radioButton6
+            // viewFlight
             // 
-            this.radioButton6.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton6.Location = new System.Drawing.Point(12, 297);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(97, 51);
-            this.radioButton6.TabIndex = 5;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "\n   radioButton1   \n ";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            this.viewFlight.Appearance = System.Windows.Forms.Appearance.Button;
+            this.viewFlight.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.viewFlight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewFlight.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.viewFlight.Location = new System.Drawing.Point(12, 260);
+            this.viewFlight.Name = "viewFlight";
+            this.viewFlight.Size = new System.Drawing.Size(145, 51);
+            this.viewFlight.TabIndex = 5;
+            this.viewFlight.Text = "\n   View Flights Status   \n ";
+            this.viewFlight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.viewFlight.UseVisualStyleBackColor = false;
+            this.viewFlight.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
             // 
-            // radioButton7
+            // assignTask
             // 
-            this.radioButton7.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton7.Location = new System.Drawing.Point(12, 354);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(97, 51);
-            this.radioButton7.TabIndex = 6;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "\n   radioButton1   \n ";
-            this.radioButton7.UseVisualStyleBackColor = true;
-            this.radioButton7.CheckedChanged += new System.EventHandler(this.radioButton7_CheckedChanged);
+            this.assignTask.Appearance = System.Windows.Forms.Appearance.Button;
+            this.assignTask.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.assignTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.assignTask.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.assignTask.Location = new System.Drawing.Point(12, 310);
+            this.assignTask.Name = "assignTask";
+            this.assignTask.Size = new System.Drawing.Size(145, 51);
+            this.assignTask.TabIndex = 6;
+            this.assignTask.Text = "\n   Assign Task   \n ";
+            this.assignTask.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.assignTask.UseVisualStyleBackColor = false;
+            this.assignTask.CheckedChanged += new System.EventHandler(this.radioButton7_CheckedChanged);
             // 
-            // radioButton8
+            // feedback
             // 
-            this.radioButton8.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton8.Location = new System.Drawing.Point(12, 411);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(97, 51);
-            this.radioButton8.TabIndex = 7;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "\n   radioButton1   \n ";
-            this.radioButton8.UseVisualStyleBackColor = true;
-            this.radioButton8.CheckedChanged += new System.EventHandler(this.radioButton8_CheckedChanged);
+            this.feedback.Appearance = System.Windows.Forms.Appearance.Button;
+            this.feedback.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.feedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.feedback.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.feedback.Location = new System.Drawing.Point(12, 360);
+            this.feedback.Name = "feedback";
+            this.feedback.Size = new System.Drawing.Size(145, 51);
+            this.feedback.TabIndex = 7;
+            this.feedback.Text = "\n   View Feedback   \n ";
+            this.feedback.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.feedback.UseVisualStyleBackColor = false;
+            this.feedback.CheckedChanged += new System.EventHandler(this.radioButton8_CheckedChanged);
             // 
-            // radioButton9
+            // textBox1
             // 
-            this.radioButton9.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton9.Location = new System.Drawing.Point(12, 468);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(97, 51);
-            this.radioButton9.TabIndex = 8;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "\n   radioButton1   \n ";
-            this.radioButton9.UseVisualStyleBackColor = true;
-            this.radioButton9.CheckedChanged += new System.EventHandler(this.radioButton9_CheckedChanged);
+            this.textBox1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.textBox1.Location = new System.Drawing.Point(163, 12);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(660, 400);
+            this.textBox1.TabIndex = 8;
             // 
             // Admin_DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 545);
-            this.Controls.Add(this.radioButton9);
-            this.Controls.Add(this.radioButton8);
-            this.Controls.Add(this.radioButton7);
-            this.Controls.Add(this.radioButton6);
-            this.Controls.Add(this.radioButton5);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.ClientSize = new System.Drawing.Size(835, 424);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.feedback);
+            this.Controls.Add(this.assignTask);
+            this.Controls.Add(this.viewFlight);
+            this.Controls.Add(this.revenue);
+            this.Controls.Add(this.manageFlight);
+            this.Controls.Add(this.manageEmp);
+            this.Controls.Add(this.addEmp);
+            this.Controls.Add(this.CheckProfile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Admin_DashBoard";
             this.Text = "Admin_Dashboard";
@@ -193,14 +196,14 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.RadioButton radioButton9;
+        private System.Windows.Forms.RadioButton CheckProfile;
+        private System.Windows.Forms.RadioButton addEmp;
+        private System.Windows.Forms.RadioButton manageEmp;
+        private System.Windows.Forms.RadioButton manageFlight;
+        private System.Windows.Forms.RadioButton revenue;
+        private System.Windows.Forms.RadioButton viewFlight;
+        private System.Windows.Forms.RadioButton assignTask;
+        private System.Windows.Forms.RadioButton feedback;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

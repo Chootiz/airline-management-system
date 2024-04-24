@@ -24,183 +24,167 @@ namespace DB_Project
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.radioButton1.Checked)
+            if (this.CheckProfile.Checked)
             {
-                this.radioButton1.BackColor = System.Drawing.SystemColors.Highlight;
-                this.radioButton2.Checked = false;
-                this.radioButton3.Checked = false;
-                this.radioButton4.Checked = false;
-                this.radioButton5.Checked = false;
-                this.radioButton6.Checked = false;
-                this.radioButton7.Checked = false;
-                this.radioButton8.Checked = false;
-                this.radioButton9.Checked = false;
+                this.CheckProfile.BackColor = System.Drawing.SystemColors.Highlight;
+                this.addEmp.Checked = false;
+                this.manageEmp.Checked = false;
+                this.manageFlight.Checked = false;
+                this.revenue.Checked = false;
+                this.viewFlight.Checked = false;
+                this.assignTask.Checked = false;
+                this.feedback.Checked = false;
+               
                 //show relevant buttons and text boxes
             }
             else
             {
-                this.radioButton1.BackColor = System.Drawing.SystemColors.ControlDark;
+                this.CheckProfile.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             }
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.radioButton2.Checked)
+            if (this.addEmp.Checked)
             {
-                this.radioButton2.BackColor = System.Drawing.SystemColors.Highlight;
-                this.radioButton1.Checked = false;
-                this.radioButton3.Checked = false;
-                this.radioButton4.Checked = false;
-                this.radioButton5.Checked = false;
-                this.radioButton6.Checked = false;
-                this.radioButton7.Checked = false;
-                this.radioButton8.Checked = false;
-                this.radioButton9.Checked = false;
+                this.addEmp.BackColor = System.Drawing.SystemColors.Highlight;
+                this.CheckProfile.Checked = false;
+                this.manageEmp.Checked = false;
+                this.manageFlight.Checked = false;
+                this.revenue.Checked = false;
+                this.viewFlight.Checked = false;
+                this.assignTask.Checked = false;
+                this.feedback.Checked = false;
+               
             }
             else
             {
-                this.radioButton2.BackColor = System.Drawing.SystemColors.ControlDark;
+                this.addEmp.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             }
+
+            
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.radioButton3.Checked)
+            if (this.manageEmp.Checked)
             {
-                this.radioButton3.BackColor = System.Drawing.SystemColors.Highlight;
-                this.radioButton1.Checked = false;
-                this.radioButton2.Checked = false;
-                this.radioButton4.Checked = false;
-                this.radioButton5.Checked = false;
-                this.radioButton6.Checked = false;
-                this.radioButton7.Checked = false;
-                this.radioButton8.Checked = false;
-                this.radioButton9.Checked = false;
+                this.manageEmp.BackColor = System.Drawing.SystemColors.Highlight;
+                this.CheckProfile.Checked = false;
+                this.addEmp.Checked = false;
+                this.manageFlight.Checked = false;
+                this.revenue.Checked = false;
+                this.viewFlight.Checked = false;
+                this.assignTask.Checked = false;
+                this.feedback.Checked = false;
+               
             }
             else
             {
-                this.radioButton3.BackColor = System.Drawing.SystemColors.ControlDark;
+                this.manageEmp.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             }
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.radioButton4.Checked)
+            if (this.manageFlight.Checked)
             {
-                this.radioButton4.BackColor = System.Drawing.SystemColors.Highlight;
-                this.radioButton1.Checked = false;
-                this.radioButton2.Checked = false;
-                this.radioButton3.Checked = false;
-                this.radioButton5.Checked = false;
-                this.radioButton6.Checked = false;
-                this.radioButton7.Checked = false;
-                this.radioButton8.Checked = false;
-                this.radioButton9.Checked = false;
+                this.manageFlight.BackColor = System.Drawing.SystemColors.Highlight;
+                this.CheckProfile.Checked = false;
+                this.addEmp.Checked = false;
+                this.manageEmp.Checked = false;
+                this.revenue.Checked = false;
+                this.viewFlight.Checked = false;
+                this.assignTask.Checked = false;
+                this.feedback.Checked = false;
+               
             }
             else
             {
-                this.radioButton4.BackColor = System.Drawing.SystemColors.ControlDark;
+                this.manageFlight.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             }
         }
 
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.radioButton5.Checked)
+            if (this.revenue.Checked)
             {
-                this.radioButton5.BackColor = System.Drawing.SystemColors.Highlight;
-                this.radioButton1.Checked = false;
-                this.radioButton2.Checked = false;
-                this.radioButton3.Checked = false;
-                this.radioButton4.Checked = false;
-                this.radioButton6.Checked = false;
-                this.radioButton7.Checked = false;
-                this.radioButton8.Checked = false;
-                this.radioButton9.Checked = false;
+                this.revenue.BackColor = System.Drawing.SystemColors.Highlight;
+                this.CheckProfile.Checked = false;
+                this.addEmp.Checked = false;
+                this.manageEmp.Checked = false;
+                this.manageFlight.Checked = false;
+                this.viewFlight.Checked = false;
+                this.assignTask.Checked = false;
+                this.feedback.Checked = false;
+               
             }
             else
             {
-                this.radioButton5.BackColor = System.Drawing.SystemColors.ControlDark;
+                this.revenue.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             }
         }
 
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.radioButton6.Checked)
+            if (this.viewFlight.Checked)
             {
-                this.radioButton6.BackColor = System.Drawing.SystemColors.Highlight;
-                this.radioButton1.Checked = false;
-                this.radioButton2.Checked = false;
-                this.radioButton3.Checked = false;
-                this.radioButton4.Checked = false;
-                this.radioButton5.Checked = false;
+                this.viewFlight.BackColor = System.Drawing.SystemColors.Highlight;
+                this.CheckProfile.Checked = false;
+                this.addEmp.Checked = false;
+                this.manageEmp.Checked = false;
+                this.manageFlight.Checked = false;
+                this.revenue.Checked = false;
             
-                this.radioButton7.Checked = false;
-                this.radioButton8.Checked = false;
-                this.radioButton9.Checked = false;
+                this.assignTask.Checked = false;
+                this.feedback.Checked = false;
+               
             }
             else
             {
-                this.radioButton6.BackColor = System.Drawing.SystemColors.ControlDark;
+                this.viewFlight.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             }
         }
         private void radioButton7_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.radioButton7.Checked)
+            if (this.assignTask.Checked)
             {
-                this.radioButton7.BackColor = System.Drawing.SystemColors.Highlight;
-                this.radioButton1.Checked = false;
-                this.radioButton2.Checked = false;
-                this.radioButton3.Checked = false;
-                this.radioButton4.Checked = false;
-                this.radioButton5.Checked = false;
-                this.radioButton6.Checked = false;
-                this.radioButton8.Checked = false;
-                this.radioButton9.Checked = false;
+                this.assignTask.BackColor = System.Drawing.SystemColors.Highlight;
+                this.CheckProfile.Checked = false;
+                this.addEmp.Checked = false;
+                this.manageEmp.Checked = false;
+                this.manageFlight.Checked = false;
+                this.revenue.Checked = false;
+                this.viewFlight.Checked = false;
+                this.feedback.Checked = false;
+               
             }
             else
             {
-                this.radioButton7.BackColor = System.Drawing.SystemColors.ControlDark;
+                this.assignTask.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             }
         }
 
         private void radioButton8_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.radioButton8.Checked)
+            if (this.feedback.Checked)
             {
-                this.radioButton8.BackColor = System.Drawing.SystemColors.Highlight;
-                this.radioButton1.Checked = false;
-                this.radioButton2.Checked = false;
-                this.radioButton3.Checked = false;
-                this.radioButton4.Checked = false;
-                this.radioButton5.Checked = false;
-                this.radioButton6.Checked = false;
-                this.radioButton7.Checked = false;
-                this.radioButton9.Checked = false;
+                this.feedback.BackColor = System.Drawing.SystemColors.Highlight;
+                this.CheckProfile.Checked = false;
+                this.addEmp.Checked = false;
+                this.manageEmp.Checked = false;
+                this.manageFlight.Checked = false;
+                this.revenue.Checked = false;
+                this.viewFlight.Checked = false;
+                this.assignTask.Checked = false;
+               
             }
             else
             {
-                this.radioButton8.BackColor = System.Drawing.SystemColors.ControlDark;
+                this.feedback.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             }
         }
-        private void radioButton9_CheckedChanged(object sender, EventArgs e)
-        {
-            if (this.radioButton9.Checked)
-            {
-                this.radioButton9.BackColor = System.Drawing.SystemColors.Highlight;
-                this.radioButton1.Checked = false;
-                this.radioButton2.Checked = false;
-                this.radioButton3.Checked = false;
-                this.radioButton4.Checked = false;
-                this.radioButton5.Checked = false;
-                this.radioButton6.Checked = false;
-                this.radioButton7.Checked = false;
-                this.radioButton8.Checked = false;
-            }
-            else
-            {
-                this.radioButton9.BackColor = System.Drawing.SystemColors.ControlDark;
-            }
-        }
+       
 
 
         
