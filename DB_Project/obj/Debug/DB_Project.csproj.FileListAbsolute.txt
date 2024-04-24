@@ -2,7 +2,6 @@ C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\bin\Debug\DB_Project.exe.c
 C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\bin\Debug\DB_Project.exe
 C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\bin\Debug\DB_Project.pdb
 C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\obj\Debug\DB_Project.csproj.AssemblyReference.cache
-C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\obj\Debug\DB_Project.Form1.resources
 C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\obj\Debug\DB_Project.Properties.Resources.resources
 C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\obj\Debug\DB_Project.csproj.GenerateResource.cache
 C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\obj\Debug\DB_Project.csproj.CoreCompileInputs.cache
@@ -30,3 +29,4 @@ C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\bin\Debug\System.Text.Json
 C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\bin\Debug\System.ValueTuple.xml
 C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\obj\Debug\DB_Project.csproj.Up2Date
+C:\Users\muzam\OneDrive\Desktop\DB_Project\DB_Project\obj\Debug\DB_Project.SignIn.resources
