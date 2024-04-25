@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,7 +20,7 @@ namespace DB_Project
 
         private void Admin_DashBoard_Load(object sender, EventArgs e)
         {
-
+            this.CheckProfile.Checked = true; ;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -34,8 +35,46 @@ namespace DB_Project
                 this.viewFlight.Checked = false;
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
+                //first hide everything(hiding all labels at start)
+                this.label1.Hide();
+                this.label2.Hide();
+                this.label3.Hide();
+                this.label4.Hide();
+                this.label5.Hide();
+                this.label6.Hide();
+                this.label7.Hide();
+                this.label8.Hide();
+
                
+                this.textBox2.Hide();
+                this.textBox3.Hide();
+                this.textBox4.Hide();
+                this.textBox5.Hide();
+                this.textBox6.Hide();
+                this.textBox7.Hide();
+                this.textBox8.Hide();
+                this.button1.Hide();
+                this.dataGridView1.Hide();
+
                 //show relevant buttons and text boxes
+                label1.Show();
+                label2.Show();
+                label3.Show();
+                label4.Show();
+                label5.Show();
+                label6.Show();
+                label1.Text = "Profile";
+                label2.Text = "UserId:";
+                //take user id from DB and concat with label2
+                label3.Text = "Name:";
+                //take Name from DB and concat with label3
+                label4.Text = "CNIC:";
+                //take CNIC from DB and concat with label4
+                label5.Text = "Email:";
+                //take Email from DB and concat with label5
+                label6.Text = "Phone Number:";
+                //take phoneNo from DB and concat with label6
+                 
             }
             else
             {
@@ -55,7 +94,63 @@ namespace DB_Project
                 this.viewFlight.Checked = false;
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
-               
+                //first hide everything(hiding all labels at start)
+                this.label1.Hide();
+                this.label2.Hide();
+                this.label3.Hide();
+                this.label4.Hide();
+                this.label5.Hide();
+                this.label6.Hide();
+                this.label7.Hide();
+                this.label8.Hide();
+
+                
+                this.textBox2.Hide();
+                this.textBox3.Hide();
+                this.textBox4.Hide();
+                this.textBox5.Hide();
+                this.textBox6.Hide();
+                this.textBox7.Hide();
+                this.textBox8.Hide();
+                this.button1.Hide();
+                this.dataGridView1.Hide();
+
+                //show relevant buttons and text boxes 
+                label1.Show();
+                label2.Show();
+                label3.Show();
+                label4.Show();
+                label5.Show();
+                label6.Show();
+                label7.Show();
+                label8.Show();
+                
+                textBox2.Show();
+                textBox3.Show(); 
+                textBox4.Show();
+                textBox5.Show(); 
+                textBox6.Show();
+                textBox7.Show(); 
+                textBox8.Show();
+
+                button1.Show();
+                label1.Text = "Add Employee Details";
+                label2.Text = "UserId:";
+                //take user id from DB and concat with label2
+                label3.Text = "Name:";
+                //take Name from DB and concat with label3
+                label4.Text = "CNIC:";
+                //take CNIC from DB and concat with label4
+                label5.Text = "Email:";
+                //take Email from DB and concat with label5
+                label6.Text = "Phone Number:";
+                //take phoneNo from DB and concat with label6
+                label7.Text = "Password:";
+                label8.Text = "Confirm Password:";
+
+                button1.Text = "Submit";
+
+                
             }
             else
             {
@@ -77,7 +172,44 @@ namespace DB_Project
                 this.viewFlight.Checked = false;
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
-               
+                //first hide everything(hiding all labels at start)
+                this.label1.Hide();
+                this.label2.Hide();
+                this.label3.Hide();
+                this.label4.Hide();
+                this.label5.Hide();
+                this.label6.Hide();
+                this.label7.Hide();
+                this.label8.Hide();
+
+
+                this.textBox2.Hide();
+                this.textBox3.Hide();
+                this.textBox4.Hide();
+                this.textBox5.Hide();
+                this.textBox6.Hide();
+                this.textBox7.Hide();
+                this.textBox8.Hide();
+                this.button1.Hide();
+                this.dataGridView1.Hide();
+
+                //show relevant buttons and text boxes 
+
+                label1.Show();
+                textBox2.Show();
+                textBox3.Show();
+                textBox4.Show();
+                textBox5.Show();
+                textBox6.Show();
+                textBox7.Show();
+                textBox8.Show();
+                button1.Show();
+                dataGridView1.Show();
+                label1.Text =" UPDATE Employee Details";
+                
+
+                button1.Text = "Submit";
+
             }
             else
             {
@@ -97,7 +229,14 @@ namespace DB_Project
                 this.viewFlight.Checked = false;
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
-               
+                // first hide everything (hiding all labels at start)
+                this.label1.Hide();
+                this.label2.Hide();
+                this.label3.Hide();
+                this.label4.Hide();
+                this.label5.Hide();
+                this.label6.Hide();
+
             }
             else
             {
@@ -117,7 +256,14 @@ namespace DB_Project
                 this.viewFlight.Checked = false;
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
-               
+                // first hide everything (hiding all labels at start)
+                this.label1.Hide();
+                this.label2.Hide();
+                this.label3.Hide();
+                this.label4.Hide();
+                this.label5.Hide();
+                this.label6.Hide();
+
             }
             else
             {
@@ -135,10 +281,15 @@ namespace DB_Project
                 this.manageEmp.Checked = false;
                 this.manageFlight.Checked = false;
                 this.revenue.Checked = false;
-            
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
-               
+                // first hide everything (hiding all labels at start)
+                this.label1.Hide();
+                this.label2.Hide();
+                this.label3.Hide();
+                this.label4.Hide();
+                this.label5.Hide();
+                this.label6.Hide();
             }
             else
             {
@@ -157,7 +308,14 @@ namespace DB_Project
                 this.revenue.Checked = false;
                 this.viewFlight.Checked = false;
                 this.feedback.Checked = false;
-               
+                // first hide everything (hiding all labels at start)
+                this.label1.Hide();
+                this.label2.Hide();
+                this.label3.Hide();
+                this.label4.Hide();
+                this.label5.Hide();
+                this.label6.Hide();
+
             }
             else
             {
@@ -177,16 +335,53 @@ namespace DB_Project
                 this.revenue.Checked = false;
                 this.viewFlight.Checked = false;
                 this.assignTask.Checked = false;
-               
+                // first hide everything (hiding all labels at start)
+                this.label1.Hide();
+                this.label2.Hide();
+                this.label3.Hide();
+                this.label4.Hide();
+                this.label5.Hide();
+                this.label6.Hide();
             }
             else
             {
                 this.feedback.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             }
         }
-       
 
+        private void label1_Click(object sender, EventArgs e)
+        {
 
-        
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
