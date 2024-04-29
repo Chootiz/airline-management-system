@@ -44,7 +44,7 @@ namespace DB_Project
                 this.label6.Hide();
                 this.label7.Hide();
                 this.label8.Hide();
-
+                this.label9.Hide();
                
                 this.textBox2.Hide();
                 this.textBox3.Hide();
@@ -53,7 +53,13 @@ namespace DB_Project
                 this.textBox6.Hide();
                 this.textBox7.Hide();
                 this.textBox8.Hide();
+                this.textBox9.Hide();
+
                 this.button1.Hide();
+                this.button2.Hide();
+                this.button3.Hide();
+                this.button4.Hide();
+
                 this.dataGridView1.Hide();
 
                 //show relevant buttons and text boxes
@@ -103,8 +109,8 @@ namespace DB_Project
                 this.label6.Hide();
                 this.label7.Hide();
                 this.label8.Hide();
+                this.label9.Hide();
 
-                
                 this.textBox2.Hide();
                 this.textBox3.Hide();
                 this.textBox4.Hide();
@@ -112,12 +118,17 @@ namespace DB_Project
                 this.textBox6.Hide();
                 this.textBox7.Hide();
                 this.textBox8.Hide();
+                this.textBox9.Hide();
+
                 this.button1.Hide();
+                this.button2.Hide();
+                this.button3.Hide();
+                this.button4.Hide();
+
                 this.dataGridView1.Hide();
 
                 //show relevant buttons and text boxes 
                 label1.Show();
-                label2.Show();
                 label3.Show();
                 label4.Show();
                 label5.Show();
@@ -125,7 +136,6 @@ namespace DB_Project
                 label7.Show();
                 label8.Show();
                 
-                textBox2.Show();
                 textBox3.Show(); 
                 textBox4.Show();
                 textBox5.Show(); 
@@ -181,7 +191,7 @@ namespace DB_Project
                 this.label6.Hide();
                 this.label7.Hide();
                 this.label8.Hide();
-
+                this.label9.Hide();
 
                 this.textBox2.Hide();
                 this.textBox3.Hide();
@@ -190,25 +200,36 @@ namespace DB_Project
                 this.textBox6.Hide();
                 this.textBox7.Hide();
                 this.textBox8.Hide();
+                this.textBox9.Hide();
+
                 this.button1.Hide();
+                this.button2.Hide();
+                this.button3.Hide();
+                this.button4.Hide();
+
                 this.dataGridView1.Hide();
 
                 //show relevant buttons and text boxes 
 
                 label1.Show();
-                textBox2.Show();
+                label9.Show();
                 textBox3.Show();
                 textBox4.Show();
                 textBox5.Show();
                 textBox6.Show();
                 textBox7.Show();
                 textBox8.Show();
+                textBox9.Show();
+
                 button1.Show();
+                button2.Show();
+
                 dataGridView1.Show();
                 label1.Text =" UPDATE Employee Details";
-                
+                label9.Text = "Enter Employee ID:";
 
                 button1.Text = "Submit";
+                button2.Text = "Submit";
 
             }
             else
@@ -229,13 +250,68 @@ namespace DB_Project
                 this.viewFlight.Checked = false;
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
-                // first hide everything (hiding all labels at start)
+                //first hide everything(hiding all labels at start)
                 this.label1.Hide();
                 this.label2.Hide();
                 this.label3.Hide();
                 this.label4.Hide();
                 this.label5.Hide();
                 this.label6.Hide();
+                this.label7.Hide();
+                this.label8.Hide();
+                this.label9.Hide();
+
+                this.textBox2.Hide();
+                this.textBox3.Hide();
+                this.textBox4.Hide();
+                this.textBox5.Hide();
+                this.textBox6.Hide();
+                this.textBox7.Hide();
+                this.textBox8.Hide();
+                this.textBox9.Hide();
+
+                this.button1.Hide();
+                this.button2.Hide();
+                this.button3.Hide();
+                this.button4.Hide();
+
+                this.dataGridView1.Hide();
+
+                //show relevant buttons and text boxes 
+
+                label1.Show();
+                label9.Show();
+                textBox3.Show();
+                textBox4.Show();
+                textBox5.Show();
+                textBox6.Show();
+                textBox7.Show();
+                textBox8.Show();
+                textBox9.Show();
+
+                button1.Show();
+                button2.Show();
+                button3.Show();
+                button4.Show();
+
+                dataGridView1.Show();
+                label1.Text = " Manage Flight Schedules";
+                label9.Text = "Enter Flight ID:";
+
+                button1.Text = "Submit";
+                button2.Text = "Submit";
+                button3.Text = "ADD FLIGHT";
+                button4.Text = "UPDATE FLIGHT";
+
+                if (button3.Enabled==true)
+                {
+                    
+                    label9.Text = "show";
+                }
+                else if(button4.Enabled==true)
+                {
+                    label9.Text = "update";
+                }
 
             }
             else
@@ -382,6 +458,23 @@ namespace DB_Project
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Admin_DashBoard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            button3.Enabled = false;
+            button4.Enabled = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            button3.Enabled = true;
+            button4.Enabled = false;
         }
     }
 }
