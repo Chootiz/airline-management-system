@@ -20,14 +20,17 @@ namespace DB_Project
 
         private void Admin_DashBoard_Load(object sender, EventArgs e)
         {
-            this.CheckProfile.Checked = true; ;
+            this.CheckProfile.Checked = true;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if (this.CheckProfile.Checked)
             {
-                this.CheckProfile.BackColor = System.Drawing.SystemColors.Highlight;
+                this.CheckProfile.BackColor = System.Drawing.ColorTranslator.FromHtml("#332084");
+                this.CheckProfile.ForeColor = System.Drawing.ColorTranslator.FromHtml("#0A3359");
+                //.BackColor = System.Drawing.ColorTranslator.FromHtml("#332084");
+                //.ForeColor = System.Drawing.ColorTranslator.FromHtml("#0A3359");
                 this.addEmp.Checked = false;
                 this.manageEmp.Checked = false;
                 this.manageFlight.Checked = false;
@@ -36,7 +39,6 @@ namespace DB_Project
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
                 //first hide everything(hiding all labels at start)
-                this.label1.Hide();
                 this.label2.Hide();
                 this.label3.Hide();
                 this.label4.Hide();
@@ -57,19 +59,15 @@ namespace DB_Project
 
                 this.button1.Hide();
                 this.button2.Hide();
-                this.button3.Hide();
-                this.button4.Hide();
 
                 this.dataGridView1.Hide();
 
                 //show relevant buttons and text boxes
-                label1.Show();
                 label2.Show();
                 label3.Show();
                 label4.Show();
                 label5.Show();
                 label6.Show();
-                label1.Text = "Profile";
                 label2.Text = "UserId:";
                 //take user id from DB and concat with label2
                 label3.Text = "Name:";
@@ -84,7 +82,9 @@ namespace DB_Project
             }
             else
             {
-                this.CheckProfile.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+                this.CheckProfile.BackColor = System.Drawing.ColorTranslator.FromHtml("#1B1D5A");
+                this.CheckProfile.ForeColor = System.Drawing.ColorTranslator.FromHtml("#6F6FBC");
+
             }
         }
 
@@ -92,7 +92,8 @@ namespace DB_Project
         {
             if (this.addEmp.Checked)
             {
-                this.addEmp.BackColor = System.Drawing.SystemColors.Highlight;
+                this.addEmp.BackColor = System.Drawing.ColorTranslator.FromHtml("#332084");
+                this.addEmp.ForeColor = System.Drawing.ColorTranslator.FromHtml("#0A3359");
                 this.CheckProfile.Checked = false;
                 this.manageEmp.Checked = false;
                 this.manageFlight.Checked = false;
@@ -101,7 +102,6 @@ namespace DB_Project
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
                 //first hide everything(hiding all labels at start)
-                this.label1.Hide();
                 this.label2.Hide();
                 this.label3.Hide();
                 this.label4.Hide();
@@ -122,13 +122,10 @@ namespace DB_Project
 
                 this.button1.Hide();
                 this.button2.Hide();
-                this.button3.Hide();
-                this.button4.Hide();
 
                 this.dataGridView1.Hide();
 
                 //show relevant buttons and text boxes 
-                label1.Show();
                 label3.Show();
                 label4.Show();
                 label5.Show();
@@ -144,7 +141,6 @@ namespace DB_Project
                 textBox8.Show();
 
                 button1.Show();
-                label1.Text = "Add Employee Details";
                 label2.Text = "UserId:";
                 //take user id from DB and concat with label2
                 label3.Text = "Name:";
@@ -164,7 +160,8 @@ namespace DB_Project
             }
             else
             {
-                this.addEmp.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+                this.addEmp.BackColor = System.Drawing.ColorTranslator.FromHtml("#1B1D5A");
+                this.addEmp.ForeColor = System.Drawing.ColorTranslator.FromHtml("#6F6FBC");
             }
 
             
@@ -174,7 +171,8 @@ namespace DB_Project
         {
             if (this.manageEmp.Checked)
             {
-                this.manageEmp.BackColor = System.Drawing.SystemColors.Highlight;
+                this.manageEmp.BackColor = System.Drawing.ColorTranslator.FromHtml("#332084");
+                this.manageEmp.ForeColor = System.Drawing.ColorTranslator.FromHtml("#0A3359");
                 this.CheckProfile.Checked = false;
                 this.addEmp.Checked = false;
                 this.manageFlight.Checked = false;
@@ -183,7 +181,6 @@ namespace DB_Project
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
                 //first hide everything(hiding all labels at start)
-                this.label1.Hide();
                 this.label2.Hide();
                 this.label3.Hide();
                 this.label4.Hide();
@@ -204,14 +201,11 @@ namespace DB_Project
 
                 this.button1.Hide();
                 this.button2.Hide();
-                this.button3.Hide();
-                this.button4.Hide();
 
                 this.dataGridView1.Hide();
 
                 //show relevant buttons and text boxes 
 
-                label1.Show();
                 label9.Show();
                 textBox3.Show();
                 textBox4.Show();
@@ -225,7 +219,6 @@ namespace DB_Project
                 button2.Show();
 
                 dataGridView1.Show();
-                label1.Text =" UPDATE Employee Details";
                 label9.Text = "Enter Employee ID:";
 
                 button1.Text = "Submit";
@@ -234,7 +227,8 @@ namespace DB_Project
             }
             else
             {
-                this.manageEmp.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+                this.manageEmp.BackColor = System.Drawing.ColorTranslator.FromHtml("#1B1D5A");
+                this.manageEmp.ForeColor = System.Drawing.ColorTranslator.FromHtml("#6F6FBC");
             }
         }
 
@@ -242,7 +236,8 @@ namespace DB_Project
         {
             if (this.manageFlight.Checked)
             {
-                this.manageFlight.BackColor = System.Drawing.SystemColors.Highlight;
+                this.manageFlight.BackColor = System.Drawing.ColorTranslator.FromHtml("#332084");
+                this.manageFlight.ForeColor = System.Drawing.ColorTranslator.FromHtml("#0A3359");
                 this.CheckProfile.Checked = false;
                 this.addEmp.Checked = false;
                 this.manageEmp.Checked = false;
@@ -251,7 +246,6 @@ namespace DB_Project
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
                 //first hide everything(hiding all labels at start)
-                this.label1.Hide();
                 this.label2.Hide();
                 this.label3.Hide();
                 this.label4.Hide();
@@ -272,14 +266,10 @@ namespace DB_Project
 
                 this.button1.Hide();
                 this.button2.Hide();
-                this.button3.Hide();
-                this.button4.Hide();
 
                 this.dataGridView1.Hide();
 
-                //show relevant buttons and text boxes 
-
-                label1.Show();
+                //show relevant buttons and text boxes
                 label9.Show();
                 textBox3.Show();
                 textBox4.Show();
@@ -291,32 +281,18 @@ namespace DB_Project
 
                 button1.Show();
                 button2.Show();
-                button3.Show();
-                button4.Show();
 
                 dataGridView1.Show();
-                label1.Text = " Manage Flight Schedules";
                 label9.Text = "Enter Flight ID:";
 
                 button1.Text = "Submit";
                 button2.Text = "Submit";
-                button3.Text = "ADD FLIGHT";
-                button4.Text = "UPDATE FLIGHT";
-
-                if (button3.Enabled==true)
-                {
-                    
-                    label9.Text = "show";
-                }
-                else if(button4.Enabled==true)
-                {
-                    label9.Text = "update";
-                }
 
             }
             else
             {
-                this.manageFlight.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+                this.manageFlight.BackColor = System.Drawing.ColorTranslator.FromHtml("#1B1D5A");
+                this.manageFlight.ForeColor = System.Drawing.ColorTranslator.FromHtml("#6F6FBC");
             }
         }
 
@@ -324,7 +300,8 @@ namespace DB_Project
         {
             if (this.revenue.Checked)
             {
-                this.revenue.BackColor = System.Drawing.SystemColors.Highlight;
+                this.revenue.BackColor = System.Drawing.ColorTranslator.FromHtml("#332084");
+                this.revenue.ForeColor = System.Drawing.ColorTranslator.FromHtml("#0A3359");
                 this.CheckProfile.Checked = false;
                 this.addEmp.Checked = false;
                 this.manageEmp.Checked = false;
@@ -333,7 +310,6 @@ namespace DB_Project
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
                 // first hide everything (hiding all labels at start)
-                this.label1.Hide();
                 this.label2.Hide();
                 this.label3.Hide();
                 this.label4.Hide();
@@ -343,7 +319,8 @@ namespace DB_Project
             }
             else
             {
-                this.revenue.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+                this.revenue.BackColor = System.Drawing.ColorTranslator.FromHtml("#1B1D5A");
+                this.revenue.ForeColor = System.Drawing.ColorTranslator.FromHtml("#6F6FBC");
             }
         }
 
@@ -351,7 +328,8 @@ namespace DB_Project
         {
             if (this.viewFlight.Checked)
             {
-                this.viewFlight.BackColor = System.Drawing.SystemColors.Highlight;
+                this.viewFlight.BackColor = System.Drawing.ColorTranslator.FromHtml("#332084");
+                this.viewFlight.ForeColor = System.Drawing.ColorTranslator.FromHtml("#0A3359");
                 this.CheckProfile.Checked = false;
                 this.addEmp.Checked = false;
                 this.manageEmp.Checked = false;
@@ -360,7 +338,6 @@ namespace DB_Project
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
                 // first hide everything (hiding all labels at start)
-                this.label1.Hide();
                 this.label2.Hide();
                 this.label3.Hide();
                 this.label4.Hide();
@@ -369,14 +346,16 @@ namespace DB_Project
             }
             else
             {
-                this.viewFlight.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+                this.viewFlight.BackColor = System.Drawing.ColorTranslator.FromHtml("#1B1D5A");
+                this.viewFlight.ForeColor = System.Drawing.ColorTranslator.FromHtml("#6F6FBC");
             }
         }
         private void radioButton7_CheckedChanged(object sender, EventArgs e)
         {
             if (this.assignTask.Checked)
             {
-                this.assignTask.BackColor = System.Drawing.SystemColors.Highlight;
+                this.assignTask.BackColor = System.Drawing.ColorTranslator.FromHtml("#332084");
+                this.assignTask.ForeColor = System.Drawing.ColorTranslator.FromHtml("#0A3359");
                 this.CheckProfile.Checked = false;
                 this.addEmp.Checked = false;
                 this.manageEmp.Checked = false;
@@ -385,7 +364,6 @@ namespace DB_Project
                 this.viewFlight.Checked = false;
                 this.feedback.Checked = false;
                 // first hide everything (hiding all labels at start)
-                this.label1.Hide();
                 this.label2.Hide();
                 this.label3.Hide();
                 this.label4.Hide();
@@ -395,7 +373,8 @@ namespace DB_Project
             }
             else
             {
-                this.assignTask.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+                this.assignTask.BackColor = System.Drawing.ColorTranslator.FromHtml("#1B1D5A");
+                this.assignTask.ForeColor = System.Drawing.ColorTranslator.FromHtml("#6F6FBC");
             }
         }
 
@@ -403,7 +382,8 @@ namespace DB_Project
         {
             if (this.feedback.Checked)
             {
-                this.feedback.BackColor = System.Drawing.SystemColors.Highlight;
+                this.feedback.BackColor = System.Drawing.ColorTranslator.FromHtml("#332084");
+                this.feedback.ForeColor = System.Drawing.ColorTranslator.FromHtml("#0A3359");
                 this.CheckProfile.Checked = false;
                 this.addEmp.Checked = false;
                 this.manageEmp.Checked = false;
@@ -412,7 +392,6 @@ namespace DB_Project
                 this.viewFlight.Checked = false;
                 this.assignTask.Checked = false;
                 // first hide everything (hiding all labels at start)
-                this.label1.Hide();
                 this.label2.Hide();
                 this.label3.Hide();
                 this.label4.Hide();
@@ -421,7 +400,8 @@ namespace DB_Project
             }
             else
             {
-                this.feedback.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+                this.feedback.BackColor = System.Drawing.ColorTranslator.FromHtml("#1B1D5A");
+                this.feedback.ForeColor = System.Drawing.ColorTranslator.FromHtml("#6F6FBC");
             }
         }
 
@@ -464,17 +444,169 @@ namespace DB_Project
         {
             Application.Exit();
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void textBox11_TextChanged(object sender, EventArgs e)
         {
-            button3.Enabled = false;
-            button4.Enabled = true;
+
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button12_Click(object sender, EventArgs e)
         {
-            button3.Enabled = true;
-            button4.Enabled = false;
+
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox17_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox18_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox16_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox14_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
