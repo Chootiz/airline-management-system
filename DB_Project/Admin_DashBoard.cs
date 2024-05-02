@@ -42,37 +42,7 @@ namespace DB_Project
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
                 //first hide everything(hiding all labels at start)
-                this.label2.Hide();
-                this.label3.Hide();
-                this.label4.Hide();
-                this.label5.Hide();
-                this.label6.Hide();
-                this.label7.Hide();
-                this.label8.Hide();
-                this.label9.Hide();
-
-                this.textBox1.Hide();
-                this.textBox2.Hide();
-                this.textBox3.Hide();
-                this.textBox4.Hide();
-                this.textBox5.Hide();
-                this.textBox6.Hide();
-                this.textBox7.Hide();
-                this.textBox8.Hide();
-
-                this.button3.Hide();
-                this.button4.Hide();
-                this.button5.Hide();
-                this.button6.Hide();
-                this.button7.Hide();
-                this.button8.Hide();
-                this.button9.Hide();
-                this.button10.Hide();
-
-                this.button1.Hide();
-                this.button2.Hide();
-
-                this.dataGridView1.Hide();
+                hideAll();
 
                 //show relevant buttons and text boxes
                 label2.Show();
@@ -114,37 +84,7 @@ namespace DB_Project
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
                 //first hide everything(hiding all labels at start)
-                this.label2.Hide();
-                this.label3.Hide();
-                this.label4.Hide();
-                this.label5.Hide();
-                this.label6.Hide();
-                this.label7.Hide();
-                this.label8.Hide();
-                this.label9.Hide();
-
-                this.textBox1.Hide();
-                this.textBox2.Hide();
-                this.textBox3.Hide();
-                this.textBox4.Hide();
-                this.textBox5.Hide();
-                this.textBox6.Hide();
-                this.textBox7.Hide();
-                this.textBox8.Hide();
-
-                this.button3.Hide();
-                this.button4.Hide();
-                this.button5.Hide();
-                this.button6.Hide();
-                this.button7.Hide();
-                this.button8.Hide();
-                this.button9.Hide();
-                this.button10.Hide();
-
-                this.button1.Hide();
-                this.button2.Hide();
-
-                this.dataGridView1.Hide();
+                hideAll();
 
                 //show relevant buttons and text boxes
 
@@ -191,7 +131,7 @@ namespace DB_Project
                 label8.Text = "Confirm Password:";
 
                 button1.Text = "Submit";
-                this.button2.Text = "Search";
+                
 
 
             }
@@ -216,37 +156,7 @@ namespace DB_Project
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
                 //first hide everything(hiding all labels at start)
-                this.label2.Hide();
-                this.label3.Hide();
-                this.label4.Hide();
-                this.label5.Hide();
-                this.label6.Hide();
-                this.label7.Hide();
-                this.label8.Hide();
-                this.label9.Hide();
-
-                this.textBox1.Hide();
-                this.textBox2.Hide();
-                this.textBox3.Hide();
-                this.textBox4.Hide();
-                this.textBox5.Hide();
-                this.textBox6.Hide();
-                this.textBox7.Hide();
-                this.textBox8.Hide();
-
-                this.button3.Hide();
-                this.button4.Hide();
-                this.button5.Hide();
-                this.button6.Hide();
-                this.button7.Hide();
-                this.button8.Hide();
-                this.button9.Hide();
-                this.button10.Hide();
-
-                this.button1.Hide();
-                this.button2.Hide();
-
-                this.dataGridView1.Hide();
+                hideAll();
 
                 //show relevant buttons and text boxes 
 
@@ -277,7 +187,9 @@ namespace DB_Project
                 button1.Show();
                 button2.Show();
 
+             
                 dataGridView1.Show();
+
                 label9.Text = "Enter Employee ID:";
 
                 label2.Text = "UserId:";
@@ -318,37 +230,7 @@ namespace DB_Project
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
                 //first hide everything(hiding all labels at start)
-                this.label2.Hide();
-                this.label3.Hide();
-                this.label4.Hide();
-                this.label5.Hide();
-                this.label6.Hide();
-                this.label7.Hide();
-                this.label8.Hide();
-                this.label9.Hide();
-
-                this.textBox1.Hide();
-                this.textBox2.Hide();
-                this.textBox3.Hide();
-                this.textBox4.Hide();
-                this.textBox5.Hide();
-                this.textBox6.Hide();
-                this.textBox7.Hide();
-                this.textBox8.Hide();
-
-                this.button3.Hide();
-                this.button4.Hide();
-                this.button5.Hide();
-                this.button6.Hide();
-                this.button7.Hide();
-                this.button8.Hide();
-                this.button9.Hide();
-                this.button10.Hide();
-
-                this.button1.Hide();
-                this.button2.Hide();
-
-                this.dataGridView1.Hide();
+                hideAll();
 
                 //show relevant buttons and text boxes
                 this.label3.Show();
@@ -359,6 +241,7 @@ namespace DB_Project
                 this.label9.Show();
 
                 label9.Show();
+                textBox2.Show();
                 textBox3.Show();
                 textBox4.Show();
                 textBox5.Show();
@@ -367,6 +250,10 @@ namespace DB_Project
 
                 button1.Show();
                 button2.Show();
+
+                checkBox1.Show();
+                checkBox2.Show();
+
                 this.button4.Show();
                 this.button5.Show();
                 this.button6.Show();
@@ -374,12 +261,15 @@ namespace DB_Project
                 this.button8.Show();
                 this.button10.Show();
 
+                //show all current flight status in grid view 
+              
                 dataGridView1.Show();
+
                 label9.Text = "Enter Flight ID:";
 
                 label2.Text = "Aircraft ID:";
                 //take user id from DB and concat with label2
-                label3.Text = "Departure Time:";
+                label3.Text = "Departure Location:";
                 //take Name from DB and concat with label3
                 label4.Text = "Arrival Location:";
                 //take CNIC from DB and concat with label4
@@ -413,44 +303,23 @@ namespace DB_Project
                 this.viewFlight.Checked = false;
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
-                // first hide everything (hiding all labels at start)
-                this.label2.Hide();
-                this.label3.Hide();
-                this.label4.Hide();
-                this.label5.Hide();
-                this.label6.Hide();
-                this.label7.Hide();
-                this.label8.Hide();
-                this.label9.Hide();
+                //first hide everything(hiding all labels at start)
+                hideAll();
+                //show rerleveant stuff
 
-                this.textBox1.Hide();
-                this.textBox2.Hide();
-                this.textBox3.Hide();
-                this.textBox4.Hide();
-                this.textBox5.Hide();
-                this.textBox6.Hide();
-                this.textBox7.Hide();
-                this.textBox8.Hide();
-
-                this.button3.Hide();
-                this.button4.Hide();
-                this.button5.Hide();
-                this.button6.Hide();
-                this.button7.Hide();
-                this.button8.Hide();
-                this.button9.Hide();
-                this.button10.Hide();
-
-                this.button1.Hide();
-                this.button2.Hide();
-
-                this.dataGridView1.Hide();
+                this.dataGridView1.Location = new System.Drawing.Point(175, 82);
+                this.dataGridView1.Size = new System.Drawing.Size(670, 674);
+                this.button1.Show();
+                this.dataGridView1.Show();
+                this.button1.Text = "Print";
 
             }
             else
             {
                 this.revenue.BackColor = System.Drawing.ColorTranslator.FromHtml("#1B1D5A");
                 this.revenue.ForeColor = System.Drawing.ColorTranslator.FromHtml("#6F6FBC");
+                this.dataGridView1.Location = new System.Drawing.Point(175, 395);
+                this.dataGridView1.Size = new System.Drawing.Size(323, 256);
             }
         }
 
@@ -467,17 +336,19 @@ namespace DB_Project
                 this.revenue.Checked = false;
                 this.assignTask.Checked = false;
                 this.feedback.Checked = false;
-                // first hide everything (hiding all labels at start)
-                this.label2.Hide();
-                this.label3.Hide();
-                this.label4.Hide();
-                this.label5.Hide();
-                this.label6.Hide();
+                //hide all
+                hideAll();
+                //show relevant stuff
+                this.dataGridView1.Location = new System.Drawing.Point(175, 82);
+                this.dataGridView1.Size = new System.Drawing.Size(670, 674);
+                this.dataGridView1.Show();
             }
             else
             {
                 this.viewFlight.BackColor = System.Drawing.ColorTranslator.FromHtml("#1B1D5A");
                 this.viewFlight.ForeColor = System.Drawing.ColorTranslator.FromHtml("#6F6FBC");
+                this.dataGridView1.Location = new System.Drawing.Point(175, 395);
+                this.dataGridView1.Size = new System.Drawing.Size(323, 256);
             }
         }
 
@@ -495,37 +366,38 @@ namespace DB_Project
                 this.viewFlight.Checked = false;
                 this.feedback.Checked = false;
                 // first hide everything (hiding all labels at start)
-                this.label2.Hide();
-                this.label3.Hide();
-                this.label4.Hide();
-                this.label5.Hide();
-                this.label6.Hide();
-                this.label7.Hide();
-                this.label8.Hide();
-                this.label9.Hide();
+                hideAll();
+                //SHOW RELEVANT STUFF
 
-                this.textBox1.Hide();
-                this.textBox2.Hide();
-                this.textBox3.Hide();
-                this.textBox4.Hide();
-                this.textBox5.Hide();
-                this.textBox6.Hide();
-                this.textBox7.Hide();
-                this.textBox8.Hide();
+                label3.Show();
+                label4.Show();
+                label9.Show();
 
-                this.button3.Hide();
-                this.button4.Hide();
-                this.button5.Hide();
-                this.button6.Hide();
-                this.button7.Hide();
-                this.button8.Hide();
-                this.button9.Hide();
-                this.button10.Hide();
+                button1.Show();
+                button2.Show();
+                button4.Show();
+                button5.Show();
+                button10.Show();
 
-                this.button1.Hide();
-                this.button2.Hide();
+                textBox8.Show();
+                textBox2.Show();
+                textBox3.Show();
 
-                this.dataGridView1.Hide();
+                dataGridView1.Show();
+
+                checkBox1.Show();
+                checkBox2.Show();
+
+                label9.Text = "Enter Employee ID:";
+                label3.Text = "Aircraft ID:";
+                //take Name from DB and concat with label3
+                label4.Text = "Task:";
+                //take CNIC from DB and concat with label4
+                checkBox1.Text = "Employees";
+                checkBox2.Text = "Aircrafts";
+
+                button1.Text = "Submit";
+                this.button2.Text = "Search";
 
             }
             else
@@ -549,42 +421,20 @@ namespace DB_Project
                 this.viewFlight.Checked = false;
                 this.assignTask.Checked = false;
                 // first hide everything (hiding all labels at start)
-                this.label2.Hide();
-                this.label3.Hide();
-                this.label4.Hide();
-                this.label5.Hide();
-                this.label6.Hide();
-                this.label7.Hide();
-                this.label8.Hide();
-                this.label9.Hide();
+                hideAll();
+                hideAll();
+                //show relevant stuff
+                this.dataGridView1.Location = new System.Drawing.Point(175, 82);
+                this.dataGridView1.Size = new System.Drawing.Size(670, 674);
+                this.dataGridView1.Show();
 
-                this.textBox1.Hide();
-                this.textBox2.Hide();
-                this.textBox3.Hide();
-                this.textBox4.Hide();
-                this.textBox5.Hide();
-                this.textBox6.Hide();
-                this.textBox7.Hide();
-                this.textBox8.Hide();
-
-                this.button3.Hide();
-                this.button4.Hide();
-                this.button5.Hide();
-                this.button6.Hide();
-                this.button7.Hide();
-                this.button8.Hide();
-                this.button9.Hide();
-                this.button10.Hide();
-
-                this.button1.Hide();
-                this.button2.Hide();
-
-                this.dataGridView1.Hide();
             }
             else
             {
                 this.feedback.BackColor = System.Drawing.ColorTranslator.FromHtml("#1B1D5A");
                 this.feedback.ForeColor = System.Drawing.ColorTranslator.FromHtml("#6F6FBC");
+                this.dataGridView1.Location = new System.Drawing.Point(175, 395);
+                this.dataGridView1.Size = new System.Drawing.Size(323, 256);
             }
         }
 
@@ -624,5 +474,81 @@ namespace DB_Project
                 }
             }
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Admin_Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                checkBox2.Checked = false;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                checkBox1.Checked = false;
+                label9.Hide();
+                textBox8.Hide();
+                button2.Hide();
+                button10.Hide();
+            }
+            else
+            {
+                label9.Show();
+                textBox8.Show();
+                button2.Show();
+                button10.Show();
+            }
+        }
+        private void hideAll()
+        {
+            this.label2.Hide();
+            this.label3.Hide();
+            this.label4.Hide();
+            this.label5.Hide();
+            this.label6.Hide();
+            this.label7.Hide();
+            this.label8.Hide();
+            this.label9.Hide();
+
+            this.textBox1.Hide();
+            this.textBox2.Hide();
+            this.textBox3.Hide();
+            this.textBox4.Hide();
+            this.textBox5.Hide();
+            this.textBox6.Hide();
+            this.textBox7.Hide();
+            this.textBox8.Hide();
+
+            this.button3.Hide();
+            this.button4.Hide();
+            this.button5.Hide();
+            this.button6.Hide();
+            this.button7.Hide();
+            this.button8.Hide();
+            this.button9.Hide();
+            this.button10.Hide();
+
+            this.button1.Hide();
+            this.button2.Hide();
+
+            this.checkBox1.Hide();
+            this.checkBox2.Hide();
+            this.dataGridView1.Hide();
+            this.dataGridView1.Location = new System.Drawing.Point(178, 214);
+            this.dataGridView1.Size = new System.Drawing.Size(323, 256);
+        }
+
     }
 }
