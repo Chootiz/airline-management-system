@@ -60,12 +60,16 @@ namespace DB_Project
                 //take Email from DB and concat with label5
                 label6.Text = "Phone Number: NULL NULLNULL";
                 //take phoneNo from DB and concat with label6
+                this.textBox6.UseSystemPasswordChar = true;
+                this.textBox7.UseSystemPasswordChar = true;
 
             }
             else
             {
                 this.CheckProfile.BackColor = System.Drawing.ColorTranslator.FromHtml("#1B1D5A");
                 this.CheckProfile.ForeColor = System.Drawing.ColorTranslator.FromHtml("#6F6FBC");
+                this.textBox6.UseSystemPasswordChar = false;
+                this.textBox7.UseSystemPasswordChar = false;
 
             }
         }
@@ -472,6 +476,38 @@ namespace DB_Project
                     MessageBox.Show("Password not confirmed\nPasswords entered in Password and Confirm password field do not match", "Error: Unmatching Passkeys", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                string str = textBox3.Text;
+                if (str.Length != 15)
+                {
+                    MessageBox.Show("Invalid CNIC Format\nPlease use the CNIC Format 12345-1234567-8", "Invalid CNIC Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+                else
+                {
+                    this.label4.Text = "";
+                    for (int i = 0; i < 15; i++) if (str[i] != '-' && (str[i] < '0' || str[i] > '9'))
+                        {
+                            MessageBox.Show("Invalid CNIC Format\nPlease use the CNIC Format 12345-1234567-8", "Invalid CNIC Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                            return;
+                        }
+                    if (str[5] != '-' || str[13] != '-')
+                    {
+                        MessageBox.Show("Invalid CNIC Format\nPlease use the CNIC Format 12345-1234567-8", "Invalid CNIC Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
+                    }
+
+                }
+                connect.Open();
+                OracleCommand search = connect.CreateCommand();
+                search.CommandText = "SELECT * FROM EMPLOYEE WHERE CNIC =:criteria";
+                search.Parameters.Add(":criteria", OracleDbType.Varchar2).Value = textBox3.Text;
+                OracleDataReader reader = search.ExecuteReader();
+                if (reader.Read())
+                {
+                    MessageBox.Show("Entered CNIC is already registered against another employee", "Invalid CNIC", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+                connect.Close();
             }
         }
 
