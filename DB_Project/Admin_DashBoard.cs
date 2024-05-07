@@ -14,9 +14,13 @@ namespace DB_Project
 {
     public partial class Admin_Dashboard : Form
     {
+        string t1;
+        int t2;
         OracleConnection connect;
         public Admin_Dashboard(OracleConnection con)
         {
+            t1 = "";
+            t2 = 0;
             this.connect = con;
             InitializeComponent();
         }
@@ -134,7 +138,7 @@ namespace DB_Project
                 label7.Text = "Password:";
                 label8.Text = "Confirm Password:";
 
-                button1.Text = "Submit";
+                button1.Text = "Insert";
                 
 
 
@@ -209,8 +213,17 @@ namespace DB_Project
                 label7.Text = "Password:";
                 label8.Text = "Confirm Password:";
 
-                button1.Text = "Submit";
+                button1.Text = "Update";
                 this.button2.Text = "Search";
+                
+                OracleCommand search = connect.CreateCommand();
+                search.CommandText = "SELECT * FROM EMPLOYEE";
+                search.CommandType = CommandType.Text;
+                OracleDataReader reader = search.ExecuteReader();
+                DataTable DT = new DataTable();
+                DT.Load(reader);
+                dataGridView1.DataSource = DT;
+                
 
             }
             else
@@ -497,17 +510,150 @@ namespace DB_Project
                     }
 
                 }
-                connect.Open();
+                str = textBox5.Text;
+                if (str.Length != 12 || str[4] != '-')
+                {
+                    MessageBox.Show("Invalid Phone Number Format\nPlease use the Format 1234-1234567", "Invalid Phone# Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+                for(int i = 0; i < str.Length; i++) if (str[i]!= '-' && (str[i] < '0' || str[i] > '9'))
+                    {
+                        MessageBox.Show("Invalid Phone Number Format\nPlease use the Format 1234-1234567", "Invalid Phone# Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
+                    }
                 OracleCommand search = connect.CreateCommand();
-                search.CommandText = "SELECT * FROM EMPLOYEE WHERE CNIC =:criteria";
-                search.Parameters.Add(":criteria", OracleDbType.Varchar2).Value = textBox3.Text;
+                search.CommandText = "SELECT * FROM EMPLOYEE WHERE CNIC ='" + textBox3.Text + "'";
                 OracleDataReader reader = search.ExecuteReader();
                 if (reader.Read())
                 {
                     MessageBox.Show("Entered CNIC is already registered against another employee", "Invalid CNIC", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     return;
                 }
-                connect.Close();
+                search.CommandText = "SELECT * FROM EMPLOYEE WHERE PHONE_NO = '"+textBox5.Text + "'";
+                reader = search.ExecuteReader();
+                if (reader.Read())
+                {
+                    MessageBox.Show("Entered Phone number is already registered against another employee", "Invalid Phone#", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+                search.CommandText = "SELECT * FROM EMPLOYEE WHERE EMAIL='" + textBox4.Text+"'";
+                reader = search.ExecuteReader();
+                if (reader.Read())
+                {
+                    MessageBox.Show("Entered E-Mail address is already registered against another employee", "Invalid E-mail", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+                Random rand = new Random();
+                int userID = rand.Next(10000,99999);
+                search.CommandText = "SELECT * FROM EMPLOYEE WHERE USERID=" + userID.ToString();
+                reader = search.ExecuteReader();
+                while (reader.Read())
+                {
+                    userID = rand.Next(10000, 99999);
+                    search.CommandText = "SELECT * FROM EMPLOYEE WHERE USERID=" + userID.ToString();
+                    reader = search.ExecuteReader();
+                }
+                search.CommandText = "INSERT INTO EMPLOYEE VALUES(" + userID.ToString() + ",'" + textBox3.Text + "','" + textBox2.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox4.Text + "')";
+                int insertionSuccess = search.ExecuteNonQuery();
+
+            }
+            if (this.manageEmp.Checked)
+            {
+                if (this.textBox2.Text == "")
+                {
+                    MessageBox.Show("Employee Name not provided\nPlease enter a name in the appropriate field and try again", "Error: Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (this.textBox3.Text == "")
+                {
+                    MessageBox.Show("Employee CNIC not provided\nPlease enter a CNIC in the appropriate field and try again", "Error: Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (this.textBox4.Text == "")
+                {
+                    MessageBox.Show("Employee E-Mail not provided\nPlease enter an email address in the appropriate field and try again", "Error: Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (this.textBox5.Text == "")
+                {
+                    MessageBox.Show("Employee Phone Number not provided\nPlease enter a phone number in the appropriate field and try again", "Error: Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (this.textBox6.Text == "")
+                {
+                    MessageBox.Show("Password not provided\nPlease enter a password in the appropriate field and try again", "Error: Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (this.textBox7.Text != textBox6.Text)
+                {
+                    MessageBox.Show("Password not confirmed\nPasswords entered in Password and Confirm password field do not match", "Error: Unmatching Passkeys", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                string str = textBox3.Text;
+                if (str.Length != 15)
+                {
+                    MessageBox.Show("Invalid CNIC Format\nPlease use the CNIC Format 12345-1234567-8", "Invalid CNIC Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+                else
+                {
+                    this.label4.Text = "";
+                    for (int i = 0; i < 15; i++) if (str[i] != '-' && (str[i] < '0' || str[i] > '9'))
+                        {
+                            MessageBox.Show("Invalid CNIC Format\nPlease use the CNIC Format 12345-1234567-8", "Invalid CNIC Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                            return;
+                        }
+                    if (str[5] != '-' || str[13] != '-')
+                    {
+                        MessageBox.Show("Invalid CNIC Format\nPlease use the CNIC Format 12345-1234567-8", "Invalid CNIC Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
+                    }
+
+                }
+                str = textBox5.Text;
+                if (str.Length != 12 || str[4] != '-')
+                {
+                    MessageBox.Show("Invalid Phone Number Format\nPlease use the Format 1234-1234567", "Invalid Phone# Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+                for (int i = 0; i < str.Length; i++) if (str[i] != '-' && (str[i] < '0' || str[i] > '9'))
+                    {
+                        MessageBox.Show("Invalid Phone Number Format\nPlease use the Format 1234-1234567", "Invalid Phone# Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
+                    }
+                
+                OracleCommand search = connect.CreateCommand();
+                search.CommandText = "SELECT * FROM EMPLOYEE WHERE CNIC ='" + textBox3.Text + "'";
+                OracleDataReader reader = search.ExecuteReader();
+                search.CommandText = "SELECT * FROM EMPLOYEE WHERE USERID=" + t1;
+                OracleDataReader reader2 = search.ExecuteReader();
+                if (reader.Read() && reader.GetString(reader.GetOrdinal("CNIC")) != textBox3.Text)
+                {
+                    MessageBox.Show("Entered CNIC is already registered against another employee", "Invalid CNIC", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+                search.CommandText = "SELECT * FROM EMPLOYEE WHERE PHONE_NO = '" + textBox5.Text + "'";
+                reader = search.ExecuteReader();
+                if (reader.Read() && reader.GetString(reader.GetOrdinal("PHONE_NO")) != textBox5.Text)
+                {
+                    MessageBox.Show("Entered Phone number is already registered against another employee", "Invalid Phone#", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+                search.CommandText = "SELECT * FROM EMPLOYEE WHERE EMAIL='" + textBox4.Text + "'";
+                reader = search.ExecuteReader();
+                if (reader.Read() && reader.GetString(reader.GetOrdinal("EMAIL")) != textBox4.Text)
+                {
+                    MessageBox.Show("Entered E-Mail address is already registered against another employee", "Invalid E-mail", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+                search.CommandText = "UPDATE EMPLOYEE SET USERID=" + t1 + ",CNIC='" + textBox3.Text + "',NAME='" + textBox2.Text + "',PHONE_NO='" + textBox5.Text + "',PASSWORD='" + textBox6.Text + "',EMAIL='" + textBox4.Text + "' WHERE USERID = " + t1;
+                int upd = search.ExecuteNonQuery();
+                search.CommandText = "SELECT * FROM EMPLOYEE";
+                search.CommandType = CommandType.Text;
+                reader = search.ExecuteReader();
+                DataTable DT = new DataTable();
+                DT.Load(reader);
+                dataGridView1.DataSource = DT;
             }
         }
 
@@ -586,5 +732,36 @@ namespace DB_Project
             this.dataGridView1.Size = new System.Drawing.Size(323, 256);
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string str = textBox8.Text;
+            for (int i = 0; i < str.Length; i++) if (str[i] < '0' || str[i] > '9')
+                {
+                    MessageBox.Show("User ID must be a number\nNon Numeric character are not allowed", "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+            
+            OracleCommand search = connect.CreateCommand();
+            t1 = textBox8.Text;
+            t2 = int.Parse(t1);
+            search.CommandText = "SELECT * FROM EMPLOYEE WHERE USERID=" + t1;
+            OracleDataReader reader = search.ExecuteReader();
+            if (reader.Read())
+            {
+                this.textBox2.Text = reader.GetString(reader.GetOrdinal("NAME"));
+                this.textBox3.Text = reader.GetString(reader.GetOrdinal("CNIC"));
+                this.textBox4.Text = reader.GetString(reader.GetOrdinal("EMAIL"));
+                this.textBox5.Text = reader.GetString(reader.GetOrdinal("PHONE_NO"));
+                this.textBox6.Text = reader.GetString(reader.GetOrdinal("PASSWORD"));
+                this.textBox7.Text = reader.GetString(reader.GetOrdinal("PASSWORD"));
+            }
+            else
+            {
+                MessageBox.Show("No Employee found against entered ID", "No Data", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                
+                return;
+            }
+            
+        }
     }
 }

@@ -29,6 +29,7 @@ namespace DB_Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            connect.Open();
             this.radioButton1.Checked = true;
             this.textBox1.Text = "Admin";
             this.textBox2.Text = "admin abuse innit";
@@ -62,7 +63,7 @@ namespace DB_Project
                 MessageBox.Show("No password entered\nPlease enter password and try again.", "Missing Password", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            connect.Open();
+            
             OracleCommand search = connect.CreateCommand();
             search.CommandText = "SELECT * FROM PASSENGER WHERE " + searchAtt + "=:criteria";
             if(searchAtt=="USERID") search.Parameters.Add(":criteria", OracleDbType.Int64).Value = textBox1.Text;
@@ -95,7 +96,7 @@ namespace DB_Project
                     MessageBox.Show("No user was found against the " + msg + " Entered.\nPlease check your entered " + msg + " and try again.", "No Account Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
-            connect.Close();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
