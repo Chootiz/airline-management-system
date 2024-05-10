@@ -134,3 +134,6 @@ C:\Users\muzam\OneDrive\Desktop\22F-3274_22F-3327_Project_Phase-2\DB_Project\obj
 C:\Users\muzam\OneDrive\Desktop\22F-3274_22F-3327_Project_Phase-2\DB_Project\obj\Debug\DB_Project.csproj.Up2Date
 C:\Users\muzam\OneDrive\Desktop\22F-3274_22F-3327_Project_Phase-2\DB_Project\obj\Debug\DB_Project.exe
 C:\Users\muzam\OneDrive\Desktop\22F-3274_22F-3327_Project_Phase-2\DB_Project\obj\Debug\DB_Project.pdb
+C:\Users\muzam\OneDrive\Desktop\22F-3274_22F-3327_Project_Phase-2\DB_Project\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\muzam\OneDrive\Desktop\22F-3274_22F-3327_Project_Phase-2\DB_Project\bin\Debug\itextsharp.dll
+C:\Users\muzam\OneDrive\Desktop\22F-3274_22F-3327_Project_Phase-2\DB_Project\bin\Debug\itextsharp.xml

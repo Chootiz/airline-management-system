@@ -4,11 +4,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace DB_Project
 {
@@ -154,6 +159,12 @@ namespace DB_Project
         {
             if (this.manageEmp.Checked)
             {
+                this.textBox2.MaxLength = 30; //name
+                this.textBox3.MaxLength = 16; //cnic
+                this.textBox4.MaxLength = 29; //email
+                this.textBox5.MaxLength = 13; //phone number
+                this.textBox6.MaxLength = 29; //password
+                this.textBox7.MaxLength = 29; //password
                 this.manageEmp.BackColor = System.Drawing.ColorTranslator.FromHtml("#332084");
                 this.manageEmp.ForeColor = System.Drawing.ColorTranslator.FromHtml("#0A3359");
                 this.CheckProfile.Checked = false;
@@ -223,8 +234,7 @@ namespace DB_Project
                 DataTable DT = new DataTable();
                 DT.Load(reader);
                 dataGridView1.DataSource = DT;
-                
-
+                this.dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
             }
             else
             {
@@ -237,6 +247,13 @@ namespace DB_Project
         {
             if (this.manageFlight.Checked)
             {
+                this.textBox2.MaxLength = 5;
+                this.textBox3.MaxLength = 29;
+                this.textBox4.MaxLength = 29;
+                this.textBox5.MaxLength = 19;
+                this.textBox6.MaxLength = 19;
+                this.textBox7.MaxLength = 14;
+
                 this.manageFlight.BackColor = System.Drawing.ColorTranslator.FromHtml("#332084");
                 this.manageFlight.ForeColor = System.Drawing.ColorTranslator.FromHtml("#0A3359");
                 this.CheckProfile.Checked = false;
@@ -255,50 +272,68 @@ namespace DB_Project
                 this.label5.Show();
                 this.label6.Show();
                 this.label7.Show();
+                this.label8.Show();
                 this.label9.Show();
 
-                label9.Show();
-                textBox2.Show();
-                textBox3.Show();
-                textBox4.Show();
-                textBox5.Show();
-                textBox6.Show();
-                textBox8.Show();
+                this.textBox2.Show();
+                this.textBox3.Show();
+                this.textBox4.Show();
+                this.textBox5.Show();
+                this.textBox6.Show();
+                this.textBox7.Show();
+                this.textBox8.Show();
 
-                button1.Show();
-                button2.Show();
+                this.button1.Show();
+                this.button2.Show();
 
-                checkBox1.Show();
-                checkBox2.Show();
+                this.checkBox1.Show();
+                this.checkBox2.Show();
 
                 this.button4.Show();
                 this.button5.Show();
                 this.button6.Show();
                 this.button7.Show();
                 this.button8.Show();
+                this.button9.Show();
                 this.button10.Show();
 
-                //show all current flight status in grid view 
-              
-                dataGridView1.Show();
+                this.label8.Hide();
+                this.label9.Hide();
+                this.textBox7.Hide();
+                this.textBox8.Hide();
+                this.button2.Hide();
+                this.button9.Hide();
+                this.button10.Hide();
+                this.dataGridView1.Show();
 
                 label9.Text = "Enter Flight ID:";
 
-                label2.Text = "Aircraft ID:";
+                label3.Text = "Aircraft ID:";
                 //take user id from DB and concat with label2
-                label3.Text = "Departure Location:";
+                label4.Text = "Departure Location:";
                 //take Name from DB and concat with label3
-                label4.Text = "Arrival Location:";
+                label5.Text = "Arrival Location:";
                 //take CNIC from DB and concat with label4
-                label5.Text = "Departure Time:";
+                label6.Text = "Departure Time:";
                 //take Email from DB and concat with label5
-                label6.Text = "Arrival Time:";
+                label7.Text = "Arrival Time:";
                 //take phoneNo from DB and concat with label6
-                label7.Text = "Status:";
+                label8.Text = "Status:";
+
+                checkBox1.Text = "Add";
+                checkBox2.Text = "Update";
 
                 button1.Text = "Submit";
                 this.button2.Text = "Search";
-
+                this.checkBox1.Checked = true;
+                OracleCommand search = connect.CreateCommand();
+                search.CommandText = "SELECT * FROM AIRCRAFT";
+                search.CommandType = CommandType.Text;
+                OracleDataReader reader = search.ExecuteReader();
+                DataTable DT = new DataTable();
+                DT.Load(reader);
+                dataGridView1.DataSource = DT;
+                this.dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
             }
             else
             {
@@ -323,7 +358,6 @@ namespace DB_Project
                 //first hide everything(hiding all labels at start)
                 hideAll();
                 //show rerleveant stuff
-
                 this.dataGridView1.Location = new System.Drawing.Point(175, 82);
                 this.dataGridView1.Size = new System.Drawing.Size(670, 674);
                 this.button1.Show();
@@ -358,6 +392,14 @@ namespace DB_Project
                 //show relevant stuff
                 this.dataGridView1.Location = new System.Drawing.Point(175, 82);
                 this.dataGridView1.Size = new System.Drawing.Size(670, 674);
+                OracleCommand search = connect.CreateCommand();
+                search.CommandText = "SELECT * FROM FLIGHT";
+                search.CommandType = CommandType.Text;
+                OracleDataReader reader = search.ExecuteReader();
+                DataTable DT = new DataTable();
+                DT.Load(reader);
+                dataGridView1.DataSource = DT;
+                this.dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
                 this.dataGridView1.Show();
             }
             else
@@ -410,6 +452,7 @@ namespace DB_Project
                 //take Name from DB and concat with label3
                 label4.Text = "Task:";
                 //take CNIC from DB and concat with label4
+                
                 checkBox1.Text = "Employees";
                 checkBox2.Text = "Aircrafts";
 
@@ -655,6 +698,109 @@ namespace DB_Project
                 DT.Load(reader);
                 dataGridView1.DataSource = DT;
             }
+            if (this.manageFlight.Checked)
+            {
+                if (this.checkBox1.Checked)
+                {
+                    //add
+                    if(this.textBox2.Text == "")
+                    {
+                        MessageBox.Show("No Aircraft ID Provided\nPlease enter an aircraft ID", "Error: Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (this.textBox3.Text == "")
+                    {
+                        MessageBox.Show("No Departure Location Provided\nPlease enter a location", "Error: Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (this.textBox4.Text == "")
+                    {
+                        MessageBox.Show("No Arrival Location Provided\nPlease enter a location", "Error: Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (this.textBox5.Text == "")
+                    {
+                        MessageBox.Show("No Departure Time Provided\nPlease enter a time", "Error: Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (this.textBox6.Text == "")
+                    {
+                        MessageBox.Show("No Arrival Time Provided\nPlease enter a time", "Error: Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    for (int i = 0; i < textBox2.Text.Length; i++) if (textBox2.Text[i] < '0' || textBox2.Text[i] > '9')
+                    {
+                        MessageBox.Show("Flight ID must be a number\nNon Numeric characters are not allowed", "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
+                    }
+                    DateTime Departure;
+                    if (!DateTime.TryParseExact(this.textBox5.Text, "MM-dd-yyyy HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out Departure))
+                    {
+                        MessageBox.Show("Please use the format MM-DD-YY HH:MM:SS for the date and time", "Error: Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
+                    }
+                    DateTime Arrival;
+                    if (!DateTime.TryParseExact(this.textBox6.Text, "MM-dd-yyyy HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out Arrival))
+                    {
+                        MessageBox.Show("Please use the format MM-DD-YYYY HH:MM:SS for the date and time","Error: Invalid Format",MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
+                    }
+                    OracleCommand search = connect.CreateCommand();
+                    OracleDataReader reader;
+                    Random rand = new Random();
+                    int flightID = rand.Next(10000, 99999);
+                    search.CommandText = "SELECT * FROM FLIGHT WHERE FLIGHT_ID=" + flightID.ToString();
+                    reader = search.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        flightID = rand.Next(10000, 99999);
+                        search.CommandText = "SELECT * FROM FLIGHT WHERE FLIGHT_ID=" + flightID.ToString();
+                        reader = search.ExecuteReader();
+                    }
+                    search.CommandText = "SELECT * FROM AIRCRAFT WHERE AIRCRAFT_ID=" + textBox2.Text;
+                    reader = search.ExecuteReader();
+                    if (!reader.Read())
+                    {
+                        MessageBox.Show("No aircraft found with that ID", "Error: Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
+                    }
+                    string seats = reader.GetString(reader.GetOrdinal("SEATS"));
+                    search.CommandText = "INSERT INTO FLIGHT VALUES(" + flightID.ToString() + ", '" + textBox4.Text + "', '" + textBox3.Text + "', TO_TIMESTAMP('" + textBox6.Text + "', 'MM-DD-YYYY HH24:MI:SS'), TO_TIMESTAMP('" + textBox5.Text + "', 'MM-DD-YYYY HH24:MI:SS'), 'Pending', " + textBox2.Text + ", " + seats + ")";
+                    search.ExecuteNonQuery();
+                }
+                if (this.checkBox2.Checked)
+                {
+                    //update 12-24-2024 03:00:00
+                }
+            }
+            if (this.revenue.Checked)
+            {
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                string filePath = Path.Combine(desktopPath, "Reports");
+                if (!Directory.Exists(filePath)) Directory.CreateDirectory(filePath);
+                filePath += "/Revenue_Report.pdf";
+                Document document = new Document();
+                PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
+                document.Open();
+                PdfPTable table = new PdfPTable(dataGridView1.Columns.Count);
+                foreach (DataGridViewColumn column in dataGridView1.Columns) table.AddCell(column.HeaderText);
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.Value != null)
+                        {
+                            table.AddCell(cell.Value.ToString());
+                        }
+                        else
+                        {
+                            table.AddCell(""); // Add an empty cell if the cell value is null
+                        }
+                    }
+                }
+                document.Add(table);
+                document.Close();
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -669,28 +815,107 @@ namespace DB_Project
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
+            if (this.manageFlight.Checked)
             {
-                checkBox2.Checked = false;
+                if (checkBox1.Checked)
+                {
+                    checkBox2.Checked = false;
+                    this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(82)))), ((int)(((byte)(139)))));
+                    this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(12)))), ((int)(((byte)(83)))));
+                    this.label8.Hide();
+                    this.label9.Hide();
+                    this.textBox7.Hide();
+                    this.textBox8.Hide();
+                    this.button2.Hide();
+                    this.button9.Hide();
+                    this.button10.Hide();
+                    this.dataGridView1.Show();
+
+
+                    this.button2.Text = "Search";
+                    OracleCommand search = connect.CreateCommand();
+                    search.CommandText = "SELECT * FROM AIRCRAFT";
+                    search.CommandType = CommandType.Text;
+                    OracleDataReader reader = search.ExecuteReader();
+                    DataTable DT = new DataTable();
+                    DT.Load(reader);
+                    dataGridView1.DataSource = DT;
+                    this.dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
+                }
+                else
+                {
+                    if (!this.checkBox2.Checked) this.checkBox2.Checked = true;
+                    this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(252)))));
+                    this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(12)))), ((int)(((byte)(83)))));
+                }
+            }
+            if (this.assignTask.Checked)
+            {
+                if (this.checkBox1.Checked)
+                {
+                    this.checkBox2.Checked = false;
+                    this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(82)))), ((int)(((byte)(139)))));
+                    this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(12)))), ((int)(((byte)(83)))));
+                }
+                else
+                {
+                    if (!this.checkBox2.Checked) this.checkBox2.Checked = true;
+                    this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(252)))));
+                    this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(12)))), ((int)(((byte)(83)))));
+                }
             }
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox2.Checked)
+            if (this.manageFlight.Checked)
             {
-                checkBox1.Checked = false;
-                label9.Hide();
-                textBox8.Hide();
-                button2.Hide();
-                button10.Hide();
+                if (checkBox2.Checked)
+                {
+                    this.checkBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(82)))), ((int)(((byte)(139)))));
+                    this.checkBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(12)))), ((int)(((byte)(83)))));
+                    checkBox1.Checked = false;
+                    this.label8.Show();
+                    this.label9.Show();
+                    this.textBox7.Show();
+                    this.textBox8.Show();
+                    this.button2.Show();
+                    this.button9.Show();
+                    this.button10.Show();
+                    this.dataGridView1.Show();
+
+                    this.button2.Text = "Search";
+                    OracleCommand search = connect.CreateCommand();
+                    search.CommandText = "SELECT * FROM FLIGHT";
+                    search.CommandType = CommandType.Text;
+                    OracleDataReader reader = search.ExecuteReader();
+                    DataTable DT = new DataTable();
+                    DT.Load(reader);
+                    dataGridView1.DataSource = DT;
+                    this.dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
+                }
+                else
+                {
+                    if (!this.checkBox1.Checked) this.checkBox1.Checked = true;
+                    this.checkBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(252)))));
+                    this.checkBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(12)))), ((int)(((byte)(83)))));
+
+                }
             }
-            else
+            if (this.assignTask.Checked)
             {
-                label9.Show();
-                textBox8.Show();
-                button2.Show();
-                button10.Show();
+                if (this.checkBox2.Checked)
+                {
+                    this.checkBox1.Checked = false;
+                    this.checkBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(82)))), ((int)(((byte)(139)))));
+                    this.checkBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(12)))), ((int)(((byte)(83)))));
+                }
+                else
+                {
+                    if (!this.checkBox1.Checked) this.checkBox1.Checked = true;
+                    this.checkBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(252)))));
+                    this.checkBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(12)))), ((int)(((byte)(83)))));
+                }
             }
         }
         private void hideAll()
@@ -734,34 +959,75 @@ namespace DB_Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string str = textBox8.Text;
-            for (int i = 0; i < str.Length; i++) if (str[i] < '0' || str[i] > '9')
+            if (this.manageEmp.Checked)
+            {
+                string str = textBox8.Text;
+                if (str == "")
                 {
-                    MessageBox.Show("User ID must be a number\nNon Numeric character are not allowed", "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    MessageBox.Show("Please provide a User ID of an employee to edit details", "No ID", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     return;
                 }
-            
-            OracleCommand search = connect.CreateCommand();
-            t1 = textBox8.Text;
-            t2 = int.Parse(t1);
-            search.CommandText = "SELECT * FROM EMPLOYEE WHERE USERID=" + t1;
-            OracleDataReader reader = search.ExecuteReader();
-            if (reader.Read())
-            {
-                this.textBox2.Text = reader.GetString(reader.GetOrdinal("NAME"));
-                this.textBox3.Text = reader.GetString(reader.GetOrdinal("CNIC"));
-                this.textBox4.Text = reader.GetString(reader.GetOrdinal("EMAIL"));
-                this.textBox5.Text = reader.GetString(reader.GetOrdinal("PHONE_NO"));
-                this.textBox6.Text = reader.GetString(reader.GetOrdinal("PASSWORD"));
-                this.textBox7.Text = reader.GetString(reader.GetOrdinal("PASSWORD"));
+                for (int i = 0; i < str.Length; i++) if (str[i] < '0' || str[i] > '9')
+                {
+                    MessageBox.Show("User ID must be a number\nNon Numeric characters are not allowed", "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+
+                OracleCommand search = connect.CreateCommand();
+                t1 = textBox8.Text;
+                t2 = int.Parse(t1);
+                search.CommandText = "SELECT * FROM EMPLOYEE WHERE USERID=" + t1;
+                OracleDataReader reader = search.ExecuteReader();
+                if (reader.Read())
+                {
+                    this.textBox2.Text = reader.GetString(reader.GetOrdinal("NAME"));
+                    this.textBox3.Text = reader.GetString(reader.GetOrdinal("CNIC"));
+                    this.textBox4.Text = reader.GetString(reader.GetOrdinal("EMAIL"));
+                    this.textBox5.Text = reader.GetString(reader.GetOrdinal("PHONE_NO"));
+                    this.textBox6.Text = reader.GetString(reader.GetOrdinal("PASSWORD"));
+                    this.textBox7.Text = reader.GetString(reader.GetOrdinal("PASSWORD"));
+                }
+                else
+                {
+                    MessageBox.Show("No Employee found against entered ID", "No Data", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                    return;
+                }
             }
-            else
+            if(this.manageFlight.Checked && this.checkBox2.Checked)
             {
-                MessageBox.Show("No Employee found against entered ID", "No Data", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                
-                return;
+                string str = textBox8.Text;
+                if (str == "")
+                {
+                    MessageBox.Show("Please provide a Flight ID to edit details", "No ID", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+                for (int i = 0; i < str.Length; i++) if (str[i] < '0' || str[i] > '9')
+                {
+                    MessageBox.Show("Flight ID must be a number\nNon Numeric characters are not allowed", "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+
+                OracleCommand search = connect.CreateCommand();
+                t1 = textBox8.Text;
+                t2 = int.Parse(t1);
+                search.CommandText = "SELECT * FROM FLIGHT WHERE FLIGHT_ID=" + t1;
+                OracleDataReader reader = search.ExecuteReader();
+                if (reader.Read())
+                {
+                    this.textBox2.Text = reader.GetString(reader.GetOrdinal("AIRCRAFT_ID"));
+                    this.textBox3.Text = reader.GetString(reader.GetOrdinal("DEPARTURE_LOCATION"));
+                    this.textBox4.Text = reader.GetString(reader.GetOrdinal("DESTINATION"));
+                    this.textBox5.Text = reader.GetString(reader.GetOrdinal("DEPARTURE_TIME"));
+                    this.textBox6.Text = reader.GetString(reader.GetOrdinal("ARRIVAL_TIME"));
+                    this.textBox7.Text = reader.GetString(reader.GetOrdinal("STATUS"));
+                }
+                else
+                {
+                    MessageBox.Show("No Flight found against entered ID", "No Data", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
             }
-            
         }
     }
 }

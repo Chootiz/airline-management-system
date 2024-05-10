@@ -20,7 +20,7 @@ namespace DB_Project
         OracleConnection connect;
         public SignIn()
         {
-            string conStr = @"DATA SOURCE=localhost:1521/xe;USER ID=AIRLINE;PASSWORD=db_on_air";
+            string conStr = @"User Id=AIRLINE;Password=db_on_air;Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.54.5.65)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));";
             connect = new OracleConnection(conStr);
             signup_form = new SignUp(this, connect);
             admin = new Admin_Dashboard(connect);
