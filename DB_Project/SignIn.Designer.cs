@@ -43,7 +43,6 @@ namespace DB_Project
             this.label5 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,6 +53,7 @@ namespace DB_Project
             this.textBox1.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(252)))));
             this.textBox1.Location = new System.Drawing.Point(95, 231);
+            this.textBox1.MaxLength = 16;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(310, 23);
             this.textBox1.TabIndex = 0;
@@ -97,6 +97,7 @@ namespace DB_Project
             this.textBox2.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(252)))));
             this.textBox2.Location = new System.Drawing.Point(95, 341);
+            this.textBox2.MaxLength = 29;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(310, 23);
             this.textBox2.TabIndex = 3;
@@ -191,7 +192,7 @@ namespace DB_Project
             this.radioButton1.FlatAppearance.BorderSize = 0;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(183)))), ((int)(((byte)(235)))));
-            this.radioButton1.Location = new System.Drawing.Point(131, 145);
+            this.radioButton1.Location = new System.Drawing.Point(157, 145);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(90, 46);
             this.radioButton1.TabIndex = 11;
@@ -209,7 +210,7 @@ namespace DB_Project
             this.radioButton2.FlatAppearance.BorderSize = 0;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(183)))), ((int)(((byte)(235)))));
-            this.radioButton2.Location = new System.Drawing.Point(283, 145);
+            this.radioButton2.Location = new System.Drawing.Point(253, 145);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(90, 46);
             this.radioButton2.TabIndex = 12;
@@ -218,24 +219,6 @@ namespace DB_Project
             this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioButton2.UseVisualStyleBackColor = false;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(82)))), ((int)(((byte)(139)))));
-            this.radioButton3.FlatAppearance.BorderColor = System.Drawing.Color.Beige;
-            this.radioButton3.FlatAppearance.BorderSize = 0;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(183)))), ((int)(((byte)(235)))));
-            this.radioButton3.Location = new System.Drawing.Point(227, 145);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(50, 46);
-            this.radioButton3.TabIndex = 13;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "ID";
-            this.radioButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton3.UseVisualStyleBackColor = false;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // button2
             // 
@@ -263,7 +246,6 @@ namespace DB_Project
             this.ClientSize = new System.Drawing.Size(484, 512);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button4);
@@ -278,6 +260,7 @@ namespace DB_Project
             this.DoubleBuffered = true;
             this.Name = "SignIn";
             this.Text = "Sign-In";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SignIn_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -298,7 +281,6 @@ namespace DB_Project
         private Label label5;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
-        private RadioButton radioButton3;
         private Button button2;
     }
 }
