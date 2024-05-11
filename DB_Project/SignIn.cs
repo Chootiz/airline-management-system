@@ -16,6 +16,7 @@ namespace DB_Project
     {
         SignUp signup_form;
         Admin_Dashboard admin;
+        Passenger_Form passenger;
         bool wrongFormat;
         OracleConnection connect;
         public SignIn()
@@ -30,9 +31,9 @@ namespace DB_Project
         private void Form1_Load(object sender, EventArgs e)
         {
             connect.Open();
-            this.radioButton1.Checked = true;
-            this.textBox1.Text = "Admin";
-            this.textBox2.Text = "admin abuse innit";
+            this.radioButton2.Checked = true;
+            this.textBox1.Text = "irobbanks@gmail.com";
+            this.textBox2.Text = "robbanks";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -73,7 +74,9 @@ namespace DB_Project
             {
                 if (textBox2.Text == reader.GetString(reader.GetOrdinal("PASSWORD")))
                 {
-                    //Passenger Login
+                    passenger = new Passenger_Form(connect, reader.GetString(reader.GetOrdinal("USERID")));
+                    passenger.Show();
+                    this.Hide();
                     return;
                 }
                 else MessageBox.Show("Incorrect Password Entered\nPlease Try again", "Password Incorrect", MessageBoxButtons.OK, MessageBoxIcon.Error);
