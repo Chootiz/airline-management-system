@@ -95,7 +95,7 @@ namespace DB_Project
             {
                 hideAll();
                 OracleCommand search = connect.CreateCommand();
-                search.CommandText = "SELECT B.FLIGHT_ID AS \"Flight ID\", F.DEPARTURE_LOCATION AS \"Departure Location\", F.DESTINATION AS \"Arrival Location\", F.DEPARTURE_TIME AS \"Departure Time\", F.ARRIVAL_TIME AS \"Arrival Time\", B.COST AS \"Ticket Price\", B.SEAT_NO AS \"Seat#\" FROM FLIGHT F, BOOKING B WHERE B.FLIGHT_ID = F.FLIGHT_ID AND B.PASSENGER_ID=" + this.userID;
+                search.CommandText = "SELECT B.FLIGHT_ID AS \"Flight ID\", F.DEPARTURE_LOCATION AS \"Departure Location\", F.DESTINATION AS \"Arrival Location\", F.DEPARTURE_TIME AS \"Departure Time\", F.ARRIVAL_TIME AS \"Arrival Time\", B.COST AS \"Ticket Price\", B.SEAT_NO AS \"Seat#\" FROM FLIGHT F, BOOKING B WHERE B.FLIGHT_ID = F.FLIGHT_ID AND B.PASSENGER_ID=" + this.userID + " AND B.STATUS='Valid' AND B.TICKET='Not Sold'";
                 OracleDataReader reader = search.ExecuteReader();
                 DataTable DT = new DataTable();
                 DT.Load(reader);
@@ -114,7 +114,7 @@ namespace DB_Project
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.radioButton4.Checked)]
+            if (this.radioButton4.Checked)
             {
                 this.textBox2.MaxLength = 50;
                 this.label4.Location = new System.Drawing.Point(182, 195);
@@ -153,6 +153,15 @@ namespace DB_Project
         {
             if (this.radioButton5.Checked)
             {
+                hideAll();
+                OracleCommand search = connect.CreateCommand();
+                search.CommandText = "SELECT B.FLIGHT_ID AS \"Flight ID\", F.DEPARTURE_LOCATION AS \"Departure Location\", F.DESTINATION AS \"Arrival Location\", F.DEPARTURE_TIME AS \"Departure Time\", F.ARRIVAL_TIME AS \"Arrival Time\", B.COST AS \"Ticket Price\", B.SEAT_NO AS \"Seat#\" FROM FLIGHT F, BOOKING B WHERE B.FLIGHT_ID = F.FLIGHT_ID AND B.PASSENGER_ID=" + this.userID + " AND B.STATUS='Valid' AND B.TICKET='Sold'";
+                OracleDataReader reader = search.ExecuteReader();
+                DataTable DT = new DataTable();
+                DT.Load(reader);
+                dataGridView1.DataSource = DT;
+                this.dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.DisplayedCells);
+                this.dataGridView1.Show();
                 this.radioButton5.BackColor = System.Drawing.ColorTranslator.FromHtml("#332084");
                 this.radioButton5.ForeColor = System.Drawing.ColorTranslator.FromHtml("#0A3359");
             }
@@ -313,7 +322,7 @@ namespace DB_Project
                     search.CommandText = "SELECT * FROM BOOKING WHERE BOOKING_ID=" + bookingID.ToString();
                     reader = search.ExecuteReader();
                 }
-                search.CommandText = "INSERT INTO BOOKING VALUES(" + bookingID.ToString() + "," + this.userID + "," + this.textBox3.Text + "," + seat.ToString() + "," + (seat - new_seats).ToString() + ")";
+                search.CommandText = "INSERT INTO BOOKING VALUES(" + bookingID.ToString() + "," + this.userID + "," + this.textBox3.Text + "," + seat.ToString() + "," + (seat - new_seats).ToString() + ", 'Valid', 'Not Sold'" + ")";
                 search.ExecuteNonQuery();
                 MessageBox.Show("Seat Booked Sucessfully\n", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.radioButton3.Checked = true;
@@ -330,6 +339,22 @@ namespace DB_Project
                     MessageBox.Show("Please enter your feedback in the form of comments", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     return;
                 }
+                for (int i = 0; i < textBox1.Text.Length; i++) if (textBox1.Text[i] < '0' || textBox1.Text[i] > '9')
+                    {
+                        MessageBox.Show("Flight ID is a number\nIt must not contain any non numeric characters", "Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        return;
+                    }
+                OracleCommand search = connect.CreateCommand();
+                OracleDataReader reader;
+                search.CommandText = "SELECT * FROM BOOKING WHERE PASSENGER_ID=" + userID + " AND FLIGHT_ID=" + textBox1.Text;
+                reader = search.ExecuteReader();
+                if (!reader.Read())
+                {
+                    MessageBox.Show("You cannot provide feedback for a flight you did not take", "Errur", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
+                search.CommandText = "INSERT INTO FEEDBACK VALUES(" + this.userID + ", " + textBox1.Text + ", '" + textBox2.Text + "')";
+                MessageBox.Show("Thank you for providing your valuable feedback\nOur staff will view this feedback and make sure appropriate changes are made", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

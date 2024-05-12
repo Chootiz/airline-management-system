@@ -129,7 +129,7 @@
             this.radioButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.radioButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(111)))), ((int)(((byte)(188)))));
-            this.radioButton4.Location = new System.Drawing.Point(0, 389);
+            this.radioButton4.Location = new System.Drawing.Point(0, 492);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(170, 103);
             this.radioButton4.TabIndex = 43;
@@ -147,12 +147,12 @@
             this.radioButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.radioButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(111)))), ((int)(((byte)(188)))));
-            this.radioButton5.Location = new System.Drawing.Point(0, 490);
+            this.radioButton5.Location = new System.Drawing.Point(0, 389);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(170, 103);
             this.radioButton5.TabIndex = 44;
             this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Delete Account";
+            this.radioButton5.Text = "Tickets";
             this.radioButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioButton5.UseVisualStyleBackColor = false;
             this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
