@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{097676A6-6896-4434-96CC-ED5D0AA45DDB}|DB_Project\\DB_Project.csproj|C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\db_project\\passenger_form.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{097676A6-6896-4434-96CC-ED5D0AA45DDB}|DB_Project\\DB_Project.csproj|solutionrelative:db_project\\passenger_form.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{097676A6-6896-4434-96CC-ED5D0AA45DDB}|DB_Project\\DB_Project.csproj|c:\\users\\muzam\\onedrive\\desktop\\22f-3274_22f-3327_project_phase-2\\db_project\\employee_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{097676A6-6896-4434-96CC-ED5D0AA45DDB}|DB_Project\\DB_Project.csproj|solutionrelative:db_project\\employee_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{097676A6-6896-4434-96CC-ED5D0AA45DDB}|DB_Project\\DB_Project.csproj|c:\\users\\muzam\\onedrive\\desktop\\22f-3274_22f-3327_project_phase-2\\db_project\\passenger_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{097676A6-6896-4434-96CC-ED5D0AA45DDB}|DB_Project\\DB_Project.csproj|solutionrelative:db_project\\passenger_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{097676A6-6896-4434-96CC-ED5D0AA45DDB}|DB_Project\\DB_Project.csproj|C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\db_project\\employee_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{097676A6-6896-4434-96CC-ED5D0AA45DDB}|DB_Project\\DB_Project.csproj|solutionrelative:db_project\\employee_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{097676A6-6896-4434-96CC-ED5D0AA45DDB}|DB_Project\\DB_Project.csproj|C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\db_project\\passenger_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{097676A6-6896-4434-96CC-ED5D0AA45DDB}|DB_Project\\DB_Project.csproj|solutionrelative:db_project\\passenger_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{097676A6-6896-4434-96CC-ED5D0AA45DDB}|DB_Project\\DB_Project.csproj|c:\\users\\muzam\\onedrive\\desktop\\22f-3274_22f-3327_project_phase-2\\db_project\\admin_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{097676A6-6896-4434-96CC-ED5D0AA45DDB}|DB_Project\\DB_Project.csproj|solutionrelative:db_project\\admin_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{097676A6-6896-4434-96CC-ED5D0AA45DDB}|DB_Project\\DB_Project.csproj|c:\\users\\muzam\\onedrive\\desktop\\22f-3274_22f-3327_project_phase-2\\db_project\\employee_form.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{097676A6-6896-4434-96CC-ED5D0AA45DDB}|DB_Project\\DB_Project.csproj|solutionrelative:db_project\\employee_form.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{097676A6-6896-4434-96CC-ED5D0AA45DDB}|DB_Project\\DB_Project.csproj|C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\db_project\\admin_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,57 +30,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Admin_Dashboard.cs",
-              "DocumentMoniker": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Admin_DashBoard.cs",
-              "RelativeDocumentMoniker": "DB_Project\\Admin_DashBoard.cs",
-              "ToolTip": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Admin_DashBoard.cs",
-              "RelativeToolTip": "DB_Project\\Admin_DashBoard.cs",
-              "ViewState": "AQIAAEMCAAAAAAAAAAAAwGYCAAARAAAA",
+              "Title": "Employee_Form.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Employee_Form.Designer.cs",
+              "RelativeDocumentMoniker": "DB_Project\\Employee_Form.Designer.cs",
+              "ToolTip": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Employee_Form.Designer.cs",
+              "RelativeToolTip": "DB_Project\\Employee_Form.Designer.cs",
+              "ViewState": "AQIAAEEBAAAAAAAAAAAowFkBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T15:28:44.932Z",
+              "WhenOpened": "2024-05-12T08:40:46.692Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Passenger_Form.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Passenger_Form.cs",
-              "RelativeDocumentMoniker": "DB_Project\\Passenger_Form.cs",
-              "ToolTip": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Passenger_Form.cs [Design]",
-              "RelativeToolTip": "DB_Project\\Passenger_Form.cs [Design]",
+              "Title": "Admin_Dashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Admin_DashBoard.cs",
+              "RelativeDocumentMoniker": "DB_Project\\Admin_DashBoard.cs",
+              "ToolTip": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Admin_DashBoard.cs [Design]",
+              "RelativeToolTip": "DB_Project\\Admin_DashBoard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T12:18:55.76Z",
+              "WhenOpened": "2024-05-12T08:27:54.633Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Passenger_Form.cs",
-              "DocumentMoniker": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Passenger_Form.cs",
-              "RelativeDocumentMoniker": "DB_Project\\Passenger_Form.cs",
-              "ToolTip": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Passenger_Form.cs",
-              "RelativeToolTip": "DB_Project\\Passenger_Form.cs",
-              "ViewState": "AQIAABYBAAAAAAAAAAAjwGQBAADdAAAA",
+              "DocumentIndex": 0,
+              "Title": "Employee_Form.cs",
+              "DocumentMoniker": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Employee_Form.cs",
+              "RelativeDocumentMoniker": "DB_Project\\Employee_Form.cs",
+              "ToolTip": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Employee_Form.cs",
+              "RelativeToolTip": "DB_Project\\Employee_Form.cs",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAWwHoAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T11:44:57.275Z",
+              "WhenOpened": "2024-05-12T05:23:50.428Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Passenger_Form.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Passenger_Form.Designer.cs",
-              "RelativeDocumentMoniker": "DB_Project\\Passenger_Form.Designer.cs",
-              "ToolTip": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Passenger_Form.Designer.cs",
-              "RelativeToolTip": "DB_Project\\Passenger_Form.Designer.cs",
-              "ViewState": "AQIAAFMBAAAAAAAAAAAAAGkBAAAsAAAA",
+              "DocumentIndex": 1,
+              "Title": "Employee_Form.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Employee_Form.cs",
+              "RelativeDocumentMoniker": "DB_Project\\Employee_Form.cs",
+              "ToolTip": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Employee_Form.cs [Design]",
+              "RelativeToolTip": "DB_Project\\Employee_Form.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T12:18:06.676Z",
+              "WhenOpened": "2024-05-12T05:22:01.685Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Admin_Dashboard.cs",
+              "DocumentMoniker": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Admin_DashBoard.cs",
+              "RelativeDocumentMoniker": "DB_Project\\Admin_DashBoard.cs",
+              "ToolTip": "C:\\Users\\muzam\\OneDrive\\Desktop\\22F-3274_22F-3327_Project_Phase-2\\DB_Project\\Admin_DashBoard.cs",
+              "RelativeToolTip": "DB_Project\\Admin_DashBoard.cs",
+              "ViewState": "AQIAABEDAAAAAAAAAAArwCIDAAC9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T15:28:44.932Z",
               "EditorCaption": ""
             }
           ]
