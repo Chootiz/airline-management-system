@@ -263,16 +263,6 @@ namespace DB_Project
         {
             if (this.radioButton2.Checked)
             {
-                if (this.textBox1.Text == "")
-                {
-                    MessageBox.Show("Please enter a departure location", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    return;
-                }
-                if (this.textBox2.Text == "")
-                {
-                    MessageBox.Show("Please enter a arrival location", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    return;
-                }
                 if (this.textBox3.Text == "")
                 {
                     MessageBox.Show("Please enter select a flight by entering Flight ID", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -354,6 +344,7 @@ namespace DB_Project
                     return;
                 }
                 search.CommandText = "INSERT INTO FEEDBACK VALUES(" + this.userID + ", " + textBox1.Text + ", '" + textBox2.Text + "')";
+                search.ExecuteNonQuery();
                 MessageBox.Show("Thank you for providing your valuable feedback\nOur staff will view this feedback and make sure appropriate changes are made", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

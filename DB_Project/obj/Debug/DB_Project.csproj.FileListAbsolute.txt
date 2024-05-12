@@ -138,3 +138,4 @@ C:\Users\muzam\OneDrive\Desktop\22F-3274_22F-3327_Project_Phase-2\DB_Project\bin
 C:\Users\muzam\OneDrive\Desktop\22F-3274_22F-3327_Project_Phase-2\DB_Project\bin\Debug\itextsharp.dll
 C:\Users\muzam\OneDrive\Desktop\22F-3274_22F-3327_Project_Phase-2\DB_Project\bin\Debug\itextsharp.xml
 C:\Users\muzam\OneDrive\Desktop\22F-3274_22F-3327_Project_Phase-2\DB_Project\obj\Debug\DB_Project.Passenger_Form.resources
+C:\Users\muzam\OneDrive\Desktop\22F-3274_22F-3327_Project_Phase-2\DB_Project\obj\Debug\DB_Project.Employee_Form.resources
