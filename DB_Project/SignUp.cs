@@ -249,11 +249,3 @@ namespace DB_Project
         }
     }
 }
-
-//Textbox 6 ->> name
-//Textbox 4 ->> CNIC
-//Textbox 2 ->> Phone No
-
-//Textbox 5 ->> EMail
-//Textbox 1 ->> password
-//Textbox 3 ->> confirm password

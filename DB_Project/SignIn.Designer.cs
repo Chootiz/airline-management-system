@@ -258,8 +258,8 @@ namespace DB_Project
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SignIn";
-            this.Text = "Sign-In";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SignIn_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

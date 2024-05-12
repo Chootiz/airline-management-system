@@ -15,11 +15,13 @@ namespace DB_Project
     {
         OracleConnection connect;
         string userID;
-        public Passenger_Form(OracleConnection con, string id)
+        SignIn signIn;
+        public Passenger_Form(OracleConnection con, string id, SignIn signIn)
         {
             connect = con;
             userID = id;
             InitializeComponent();
+            this.signIn = signIn;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -347,6 +349,12 @@ namespace DB_Project
                 search.ExecuteNonQuery();
                 MessageBox.Show("Thank you for providing your valuable feedback\nOur staff will view this feedback and make sure appropriate changes are made", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.signIn.Show();
+            this.Hide();
         }
     }
 }

@@ -16,6 +16,7 @@ using iTextSharp.text.pdf;
 using System.IO;
 using static System.Windows.Forms.AxHost;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
+using Org.BouncyCastle.Asn1.Ess;
 
 namespace DB_Project
 {
@@ -24,9 +25,13 @@ namespace DB_Project
         string t1;
         int t2;
         OracleConnection connect;
-        public Admin_Dashboard(OracleConnection con)
+        SignIn signIn;
+        string userID;
+        public Admin_Dashboard(OracleConnection con, SignIn parent, string id)
         {
+            signIn = parent;
             t1 = "";
+            this.userID = id;
             t2 = 0;
             this.connect = con;
             InitializeComponent();
@@ -61,18 +66,21 @@ namespace DB_Project
                 label4.Show();
                 label5.Show();
                 label6.Show();
-                label2.Text = "UserId: 0000";
-                //take user id from DB and concat with label2
-                label3.Text = "Name: Admin";
-                //take Name from DB and concat with label3
-                label4.Text = "CNIC:NULL-NULL-NULL";
-                //take CNIC from DB and concat with label4
-                label5.Text = "Email: NULL@NULL.NULL";
-                //take Email from DB and concat with label5
-                label6.Text = "Phone Number: NULL NULLNULL";
-                //take phoneNo from DB and concat with label6
-                this.textBox6.UseSystemPasswordChar = true;
-                this.textBox7.UseSystemPasswordChar = true;
+                if (userID == "Admin")
+                {
+                    label2.Text = "UserId: 0000";
+                    //take user id from DB and concat with label2
+                    label3.Text = "Name: Admin";
+                    //take Name from DB and concat with label3
+                    label4.Text = "CNIC:NULL-NULL-NULL";
+                    //take CNIC from DB and concat with label4
+                    label5.Text = "Email: NULL@NULL.NULL";
+                    //take Email from DB and concat with label5
+                    label6.Text = "Phone Number: NULL NULLNULL";
+                    //take phoneNo from DB and concat with label6
+                    this.textBox6.UseSystemPasswordChar = true;
+                    this.textBox7.UseSystemPasswordChar = true;
+                }
 
             }
             else
@@ -1217,6 +1225,12 @@ namespace DB_Project
                     return;
                 }
             }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            signIn.Show();
+            this.Hide();
         }
     }
 }

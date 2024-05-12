@@ -25,16 +25,14 @@ namespace DB_Project
             string conStr = @"User Id=AIRLINE;Password=db_on_air;Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.54.5.65)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));";
             connect = new OracleConnection(conStr);
             signup_form = new SignUp(this, connect);
-            admin = new Admin_Dashboard(connect);
+            admin = new Admin_Dashboard(connect, this, "Admin");
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             connect.Open();
-            this.radioButton2.Checked = true;
-            this.textBox1.Text = "usmanraja@gmail.com";
-            this.textBox2.Text = "rice";
+            this.radioButton1.Checked = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,6 +44,8 @@ namespace DB_Project
             if (this.radioButton2.Checked) msg = "E-Mail";
             if (this.textBox1.Text == "Admin" && this.textBox2.Text == "admin abuse innit")
             {
+                this.textBox1.Text = "";
+                this.textBox2.Text = "";
                 this.Hide();
                 admin.Show();
                 return;
@@ -75,8 +75,10 @@ namespace DB_Project
             {
                 if (textBox2.Text == reader.GetString(reader.GetOrdinal("PASSWORD")))
                 {
-                    passenger = new Passenger_Form(connect, reader.GetString(reader.GetOrdinal("USERID")));
+                    passenger = new Passenger_Form(connect,reader.GetString(reader.GetOrdinal("USERID")), this);
                     passenger.Show();
+                    this.textBox1.Text = "";
+                    this.textBox2.Text = "";
                     this.Hide();
                     return;
                 }
@@ -90,8 +92,10 @@ namespace DB_Project
                 {
                     if (textBox2.Text == reader.GetString(reader.GetOrdinal("PASSWORD")))
                     {
-                        employee = new Employee_Form(connect, reader.GetString(reader.GetOrdinal("USERID")));
+                        employee = new Employee_Form(connect, reader.GetString(reader.GetOrdinal("USERID")), this);
                         employee.Show();
+                        this.textBox1.Text = "";
+                        this.textBox2.Text = "";
                         this.Hide();
                         return;
                     }
@@ -99,7 +103,25 @@ namespace DB_Project
                 }
                 else
                 {
-                    MessageBox.Show("No user was found against the " + msg + " Entered.\nPlease check your entered " + msg + " and try again.", "No Account Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    search.CommandText = "SELECT * FROM ADMIN WHERE " + searchAtt + "=:criteria";
+                    reader = search.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        if (textBox2.Text == reader.GetString(reader.GetOrdinal("PASSWORD")))
+                        {
+                            admin = new Admin_Dashboard(connect, this, reader.GetString(reader.GetOrdinal("USERID")));
+                            admin.Show();
+                            this.textBox1.Text = "";
+                            this.textBox2.Text = "";
+                            this.Hide();
+                            return;
+                        }
+                        else MessageBox.Show("Incorrect Password Entered\nPlease Try again", "Password Incorrect", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No user was found against the " + msg + " Entered.\nPlease check your entered " + msg + " and try again.", "No Account Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
             }
             
