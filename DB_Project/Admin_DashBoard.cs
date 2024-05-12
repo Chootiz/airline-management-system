@@ -797,8 +797,10 @@ namespace DB_Project
                         MessageBox.Show("No aircraft found with that ID", "Error: Invalid Format", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         return;
                     }
+                    string str = textBox3.Text.ToUpper();
+                    string str2 = textBox4.Text.ToUpper();
                     string seats = reader.GetString(reader.GetOrdinal("SEATS"));
-                    search.CommandText = "INSERT INTO FLIGHT VALUES(" + flightID.ToString() + ", '" + textBox4.Text + "', '" + textBox3.Text + "', TO_TIMESTAMP('" + textBox6.Text + "', 'MM-DD-YYYY HH24:MI:SS'), TO_TIMESTAMP('" + textBox5.Text + "', 'MM-DD-YYYY HH24:MI:SS'), 'Pending', " + textBox2.Text + ", " + seats + ")";
+                    search.CommandText = "INSERT INTO FLIGHT VALUES(" + flightID.ToString() + ", '" + str2 + "', '" + str + "', TO_TIMESTAMP('" + textBox6.Text + "', 'MM-DD-YYYY HH24:MI:SS'), TO_TIMESTAMP('" + textBox5.Text + "', 'MM-DD-YYYY HH24:MI:SS'), 'Pending', " + textBox2.Text + ", " + seats + ")";
                     search.ExecuteNonQuery();
                     MessageBox.Show("Flight Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.textBox1.Text = "";
@@ -863,8 +865,10 @@ namespace DB_Project
                     search.CommandText = "SELECT * FROM AIRCRAFT WHERE AIRCRAFT_ID=" + textBox2.Text;
                     OracleDataReader reader2 = search.ExecuteReader();
                     string seats = "";
+                    string str = textBox3.Text.ToUpper();
+                    string str2 = textBox4.Text.ToUpper();
                     if (reader2.Read()) seats = reader2.GetString(reader2.GetOrdinal("SEATS"));
-                    search.CommandText = "UPDATE FLIGHT SET FLIGHT_ID=" + t1 + ", DESTINATION='" + textBox4.Text + "', DEPARTURE_LOCATION='" + textBox3.Text + "', ARRIVAL_TIME=TO_TIMESTAMP('" + textBox6.Text + "', 'MM-DD-YYYY HH24:MI:SS'), DEPARTURE_TIME=TO_TIMESTAMP('" + textBox5.Text + "', 'MM-DD-YYYY HH24:MI:SS'), STATUS='" + textBox7.Text + "', AIRCRAFT_ID=" + textBox2.Text + ", AV_SEATS=" + seats + " WHERE FLIGHT_ID=" + t1;
+                    search.CommandText = "UPDATE FLIGHT SET FLIGHT_ID=" + t1 + ", DESTINATION='" + str2 + "', DEPARTURE_LOCATION='" + str + "', ARRIVAL_TIME=TO_TIMESTAMP('" + textBox6.Text + "', 'MM-DD-YYYY HH24:MI:SS'), DEPARTURE_TIME=TO_TIMESTAMP('" + textBox5.Text + "', 'MM-DD-YYYY HH24:MI:SS'), STATUS='" + textBox7.Text + "', AIRCRAFT_ID=" + textBox2.Text + ", AV_SEATS=" + seats + " WHERE FLIGHT_ID=" + t1;
                     search.ExecuteNonQuery();
                     search.CommandText = "SELECT * FROM FLIGHT";
                     search.CommandType = CommandType.Text;
