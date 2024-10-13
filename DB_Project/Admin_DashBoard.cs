@@ -18,12 +18,11 @@ using static System.Windows.Forms.AxHost;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 using Org.BouncyCastle.Asn1.Ess;
 
-namespace DB_Project
-{
+namespace DB_Project {
     public partial class Admin_Dashboard : Form
     {
         string t1;
-        int t2;
+        int t2, teddo;
         OracleConnection connect;
         SignIn signIn;
         string userID;
